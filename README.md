@@ -10,8 +10,8 @@
     - [SE](#se)
 ### Docs
   1. 설계서
-     1. [BE](./Document/기능설계서/BESpecification.md)
-     2. [DB](./Document/기능설계서/DBSpecification.md)
+     1. [BE](./Document/BEDoc/BESpec.md)
+     2. [DB](./Document/BEDoc/DBSpec.md)
      3. [FE](./Document/화면설계서/StoryBoard.png)
   2. 회의록
      1. [9.1](./Document/회의록/9.19MM.md)
