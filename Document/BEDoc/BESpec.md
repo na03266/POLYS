@@ -3,7 +3,7 @@
 # 프로젝트 기능 설계서
 
 ## 1. 회원 관리 기능 설계
-<img src="./flow.drawio.png" height="200">  
+<img src="../BEDoc/img/flow.png" height="200">  
 
 ### 1.1 회원 등록 기능 설계
 
