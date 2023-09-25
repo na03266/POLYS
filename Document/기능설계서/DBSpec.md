@@ -17,8 +17,7 @@
 
 - 학번 (StudentID): 기본 키 (Primary Key), 문자열 (VARCHAR), 최대 20자
 - 이름 (Username): 문자열 (VARCHAR), 최대 20자
-- 비밀번호 (Password): 문자열 (VARCHAR), 최대 100자, 암호화 저장
-- 이메일 (Email): 문자열 (VARCHAR), 최대 100자
+- 인증정보 (password): 문자열 (VARCHAR), 최대 100자, 외래 키 (Foreign Key)
 - 가입일 (JoinDate): 날짜 및 시간 (DATETIME)
 
 ### 2.2. 출석 테이블 (Attendance)
@@ -29,7 +28,7 @@
 
 - 출석 ID (AttendanceID): 기본 키 (Primary Key), 자동 증가
 - 학번 (StudentID): 외래 키 (Foreign Key) - Members 테이블과 연결
-- 출석 여부 (Status): 문자열 (VARCHAR), '출석' 또는 '결석'
+- 출석 여부 (Status): 문자열 (VARCHAR), ' ' 또는 '0'
 - 출석 일자 (AttendanceDate): 날짜 (DATE)
 - 출석 시간 (AttendanceTime): 시간 (TIME)
 
@@ -40,8 +39,9 @@
 #### 필드 목록:
 
 - 세션 ID (SessionID): 기본 키 (Primary Key), 자동 증가
-- 학번 (StudentID): 외래 키 (Foreign Key) - Members 테이블과 연결
-- 세션 토큰 (SessionToken): 문자열 (VARCHAR), 최대 100자
+- 인증정보 (password): 문자열 (VARCHAR), 최대 100자, 외래 키 (Foreign Key)
+- 안면인식 (FaceID): 외래 키 (Foreign Key) - Members 테이블과 연결
+- 바코드인식 (bacodeID): 문자열 (VARCHAR), 최대 100자
 - 세션 만료 시간 (ExpirationTime): 날짜 및 시간 (DATETIME)
 
 ### 2.4. 관리자 테이블 (Admins)
