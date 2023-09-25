@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
 
+
 function AdminLogin() {
   const [loginError, setLoginError] = useState(null);
   const [Password, setPassword] = useState('');
@@ -13,9 +14,9 @@ function AdminLogin() {
 
       if (response.status === 200) { 
         const data = response.data;
-        localStorage.setItem('AdminID', data.AdminID);
+        // localStorage.setItem('AdminID', data.AdminID);
         localStorage.setItem('Name', data.Name);
-        window.location.reload();
+        window.location.href='/adminMenu'
       } else {
         const errorData = response.data;
         setLoginError(errorData.message || '로그인 실패');
