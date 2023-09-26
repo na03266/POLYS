@@ -1,0 +1,17 @@
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eee;
+    z-index: 1000; /* 다른 요소 위에 보이도록 설정 */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 모달 열린 상태에만 보이도록 설정 */
+  .modal.open {
+    display: block;
+  }
+  
