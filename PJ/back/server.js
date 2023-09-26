@@ -13,6 +13,8 @@ const adminLoginRouter = require('./routes/adminLogin');
 app.use('/api/adminLogin', adminLoginRouter); 
 const registRouter = require('./routes/regist'); 
 app.use('/api/regist', registRouter);
+const loginRouter = require('./routes/login'); 
+app.use('/api/login', loginRouter);
 
 const port = process.env.PORT || 3003;
 app.listen(port, () => {
