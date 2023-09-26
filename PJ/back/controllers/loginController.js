@@ -6,7 +6,7 @@ exports.login = (req, res) => {
   console.log({ studentNumber, studentAuthentication1 });
 
   db.query(
-    'SELECT studentID, studentNumber, studentName FROM student WHERE studentNumber = ? AND studentAuthentication1',
+    'SELECT studentID, studentNumber, studentName FROM student WHERE studentNumber = ? AND studentAuthentication1 = ?',
     [studentNumber, studentAuthentication1],
     (err, result) => {
       if (err) {
