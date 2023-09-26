@@ -15,10 +15,21 @@
 
 #### 필드 목록:
 
-- 학번 (StudentID): 기본 키 (Primary Key), 문자열 (VARCHAR), 최대 20자
-- 이름 (Username): 문자열 (VARCHAR), 최대 20자
-- 인증정보 (password): 문자열 (VARCHAR), 최대 100자, 외래 키 (Foreign Key)
-- 가입일 (JoinDate): 날짜 및 시간 (DATETIME)
+- 학생ID (StudentID): 기본 키 (Primary Key), 숫자 (INT)
+- 학번 (StudentNumber) : 숫자 (INT),유니크 키 (UNIQUE)
+- 이름 (StudentName): 문자열 (VARCHAR), 최대 50자
+- 인증정보 (StudentAuthentication1): 문자열 (VARCHAR), 최대 100자
+- 인증정보 (StudentAuthentication2): 문자열 (VARCHAR), 최대 100자
+
+
+| 번호 | 컬럼명                  | 속성명   | 데이터타입 | 길이  | NULL 여부 | KEY | 비고    |
+| ---  | ---                    | ---      | ---        | ---   | ---      | --- | ---     |
+| 1    | StudentID              | 학생ID   | INT        |       | NOT NULL | PK  |         |
+| 2    | StudentNumber          | 학번     | INT        |       | NOT NULL | UK  |         |
+| 3    | StudentName            | 이름     | VARCHAR    | 50    | NOT NULL |     |         |
+| 4    | StudentAuthentication1 | 인증1    | VARCHAR    | 100   |          |     |         |
+| 5    | StudentAuthentication2 | 인증2    | VARCHAR    | 100   |          |     |         |
+
 
 ### 2.2. 출석 테이블 (Attendance)
 
@@ -26,11 +37,16 @@
 
 #### 필드 목록:
 
-- 출석 ID (AttendanceID): 기본 키 (Primary Key), 자동 증가
-- 학번 (StudentID): 외래 키 (Foreign Key) - Members 테이블과 연결
-- 출석 여부 (Status): 문자열 (VARCHAR), ' ' 또는 '0'
-- 출석 일자 (AttendanceDate): 날짜 (DATE)
-- 출석 시간 (AttendanceTime): 시간 (TIME)
+- 출석 ID (AttendanceID): 기본 키 (Primary Key), 숫자 (INT), 자동 증가
+- 학생 ID (StudentID): 외래 키 (Foreign Key) - Members 테이블과 연결
+- 출석 일자 (AttendanceTime): 날짜 (DATE)
+
+
+| 번호 | 컬럼명           | 속성명    | 데이터타입 | 길이 | NULL 여부 | KEY  | 비고                 |
+| ---  | ---              | ---      | ---        | ---  | ---       | --- | ---                  |
+| 1    | AttendanceID     | 출석ID   | VARCHAR    |      | NOT NULL  | PK  | 자동증가              |
+| 2    | StudentID        | 학번     | VARCHAR    |      | NOT NULL  | FK  | Members 테이블과 연결 |
+| 3    | AttendanceDate   | 출석일자 | DATETIME   |      |           |     |                      |
 
 ### 2.3. 인증 테이블 (Authentication)
 
@@ -38,11 +54,17 @@
 
 #### 필드 목록:
 
-- 세션 ID (SessionID): 기본 키 (Primary Key), 자동 증가
-- 인증정보 (password): 문자열 (VARCHAR), 최대 100자, 외래 키 (Foreign Key)
-- 안면인식 (FaceID): 외래 키 (Foreign Key) - Members 테이블과 연결
-- 바코드인식 (bacodeID): 문자열 (VARCHAR), 최대 100자
-- 세션 만료 시간 (ExpirationTime): 날짜 및 시간 (DATETIME)
+- 인증 ID (authenticationID): 숫자 (INT) ,기본 키 (Primary Key), 자동 증가
+- 학생 ID (StudentID): 숫자 (INT), 외래 키(Foreign Key)
+- 바코드인식 (barcodeAuthentication): 외래 키 (Foreign Key) - Members 테이블과 연결
+- 얼굴인식 (faceAuthentication): 문자열 (VARCHAR), 최대 100자, 외래 키(Foreign Key)
+
+| 번호 | 컬럼명                 | 속성명         | 데이터타입 | 길이 | NULL 여부 | KEY | 비고    |
+| ---  | ---                   | ---            | ---        | ---  | ---      | --- | ---     |
+| 1    | AuthenticationID      | 인증ID         | INT        |      | NOT NULL | PK  | 자동증가 |
+| 2    | studentID             | 학생ID         | INT        |      |          | FK  |          |
+| 3    | barcodeAuthentication | 바코드인식     | VARCHAR    | 100  |          | FK  |          |
+| 4    | faceAuthentication    | 얼굴인식       | VARCHAR    | 100  |          |     |          |
 
 ### 2.4. 관리자 테이블 (Admins)
 
@@ -52,14 +74,21 @@
 
 - 관리자 ID (AdminID): 기본 키 (Primary Key), 자동 증가
 - 이름 (Name): 문자열 (VARCHAR), 최대 50자
-- 아이디 (Username): 문자열 (VARCHAR), 최대 20자, 고유한 값 (선택)
 - 비밀번호 (Password): 문자열 (VARCHAR), 최대 100자, 암호화 저장
+
+| 번호 | 컬럼명     | 속성명   | 데이터타입  | 길이 | NULL 여부 | KEY | 비고       |
+| ---  | ---       | ---      | ---         | --- | ---        | ---| ---        |
+| 1    | AdminID   | 관리자ID | VARCHAR     | 20  | NOT NULL   | PK | 자동증가    |
+| 2    | Name      | 이름     | VARCHAR     | 50  | NULL       |    |            |
+| 3    | Password  | 비밀번호 | VARCHAR     | 100 | NULL       |    | 암호화 저장 |
 
 ## 3. 테이블 관계
 
 - Members 테이블과 Attendance 테이블은 StudentID 필드를 통해 일대다 관계를 가진다.
 - Authentication 테이블은 StudentID 필드를 통해 Members 테이블과 일대다 관계를 가진다.
 - Admins 테이블은 관리자 정보를 별도로 관리한다.
+
+    <img src="./img/ERD.png" width="200">
 
 ## 4. 인덱스
 
