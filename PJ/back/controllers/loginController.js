@@ -3,8 +3,6 @@ const db = require('../db.js');
 exports.login = (req, res) => {
   const { studentNumber, studentAuthentication1 } = req.body;
 
-  console.log({ studentNumber, studentAuthentication1 });
-
   db.query(
     'SELECT studentID, studentNumber, studentName FROM student WHERE studentNumber = ? AND studentAuthentication1 = ?',
     [studentNumber, studentAuthentication1],
@@ -20,8 +18,7 @@ exports.login = (req, res) => {
       
       const student = result[0]; 
       const {studentID, studentNumber, studentName } = student;
-      console.log({studentID, studentNumber, studentName});
-
+      
       res.status(200).json({ message: '로그인 성공', studentID, studentNumber, studentName });
     }
   );
