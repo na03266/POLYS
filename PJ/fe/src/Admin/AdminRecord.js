@@ -41,11 +41,16 @@ function AdminLastRecord() {
     }
   };
 
-
-
   const goBack = () => {
     window.location.href = '/adminMenu';
   };
+
+  // Filter records for today's date
+  const today = new Date().toLocaleDateString();
+  const filteredData = jsonData.filter((item) => {
+    const itemDate = new Date(item.attendanceTime).toLocaleDateString();
+    return itemDate === today;
+  });
 
   return (
     <div>
@@ -61,7 +66,7 @@ function AdminLastRecord() {
             </tr>
           </thead>
           <tbody>
-            {jsonData.map((item, index) => (
+            {filteredData.map((item, index) => (
               <tr key={index}>
                 <td>{formatTime(item.attendanceTime)}</td>
                 <td>{formatAttendence(item.attendanceBoolean)}</td>
