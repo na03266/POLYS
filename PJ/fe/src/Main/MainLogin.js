@@ -5,6 +5,8 @@ function MainLogin() {
     const [loginError, setLoginError] = useState(null);
     const [studentNumber, setstudentNumber] = useState('');
     const [studentAuthentication1, setstudentAuthentication1] = useState('');
+    const [currentTime, setCurrentTime] = useState(new Date());
+    const [attendanceBoolean, setAttendanceBoolean] = useState(null);
   
     const handleLogin = async () => {
       try { 
@@ -15,7 +17,29 @@ function MainLogin() {
         if (response.status === 200) { 
           const data = response.data;          
           localStorage.setItem('studentName', data.studentName);
+          localStorage.setItem('studentID', data.studentID);
           window.location.href='/login2'
+
+          try {
+            // 현재 시간을 기준으로 출석 여부 판단
+            const isBeforeNineAM = currentTime.getHours() < 9;
+            const attendanceStatus = isBeforeNineAM ? 0 : 1;
+            setAttendanceBoolean(attendanceStatus);
+      
+            // 출석 정보를 서버로 POST 요청 보내기
+            const formattedAttendanceTime = currentTime.toISOString().slice(0, 19).replace('T', ' ');
+            const studentID = localStorage.getItem('studentID');
+            await axios.post('http://localhost:3003/api/loginAttend', {
+              attendanceTime: formattedAttendanceTime,
+              studentID,
+              attendanceBoolean: attendanceStatus,
+            });
+            
+            console.log('출석이 기록되었습니다.');
+          } catch (error) {
+            console.error('출석 기록에 실패했습니다.', error);
+          }
+        
         } else {
           const errorData = response.data;
           setLoginError(errorData.message || '로그인 실패');
@@ -25,6 +49,9 @@ function MainLogin() {
         setLoginError('로그인 중 오류가 발생했습니다.');
       }
     };
+
+   
+      
      
 
 
