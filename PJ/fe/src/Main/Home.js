@@ -12,6 +12,10 @@ function Home() {
     const goLogin = () => {               
       window.location.href='/login';
     };
+    const confirm = () => {
+      window.location.href='/confirm';
+    }
+
   return (
     <div>
         <button onClick={goAdmin}>관리자 페이지</button>
@@ -20,6 +24,7 @@ function Home() {
         <div className="three-container" >
         < ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
       </div>
+      <button onClick={confirm}>클릭하세요</button>
     </div>
   )
 }

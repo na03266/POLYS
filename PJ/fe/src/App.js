@@ -10,6 +10,7 @@ import Regist from './Regist/Regist';
 import RegistWait from './Regist/RegistWait';
 import MainLogin1 from './Main/MainLogin';
 import MainLogin2 from './Main/MainLogin2';
+import Confirm from './Main/Confirm';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/registWait" element={<RegistWait />} />
         <Route path="/login" element={<MainLogin1 />} />
         <Route path="/login2" element={<MainLogin2 />} />
+        <Route path="/confirm" element={<Confirm />} />
       </Routes>
     </Router>
   );
