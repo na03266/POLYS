@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 function MainLogin2() {
   const [countdown, setCountdown] = useState(5);
