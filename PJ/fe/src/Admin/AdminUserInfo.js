@@ -1,5 +1,6 @@
 import React from 'react'
 import AdminUserList from './AdminUserList';
+import FaceDetectionApp from './FaceDetectionApp';
 
 function AdminUserInfo() {
 
@@ -11,6 +12,7 @@ function AdminUserInfo() {
     <div>
         <button onClick={goBack}>뒤로가기</button><br></br>
         <AdminUserList/>
+        <FaceDetectionApp/>
     </div>
   )
 }
