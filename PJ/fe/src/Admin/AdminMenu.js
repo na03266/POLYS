@@ -19,7 +19,7 @@ function AdminMenu() {
         <AdminLogout/>
         <button onClick={goRecord}>출석현황</button>
         <button onClick={golastRecord}>지난기록</button>
-        <button onClick={goUserInfo}>정보수정</button>
+        <button onClick={goUserInfo}>학생별정보</button>
     </div>
   )
 }

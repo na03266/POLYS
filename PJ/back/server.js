@@ -19,6 +19,8 @@ const loginAttendRouter = require('./routes/loginAttend');
 app.use('/api/loginAttend', loginAttendRouter);
 const getAttendRouter = require('./routes/getAttend'); 
 app.use('/api/getAttend', getAttendRouter);
+const studentListRouter = require('./routes/studentList'); 
+app.use('/api/studentList', studentListRouter);
 
 const port = process.env.PORT || 3003;
 app.listen(port, () => {
