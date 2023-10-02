@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function AdminLastRecord() {
@@ -55,22 +55,21 @@ function AdminLastRecord() {
   return (
     <div>
       <button onClick={getAttend}>조회하기</button>
-      <button onClick={goBack}>뒤로가기</button>
+      <button onClick={goBack}>뒤로가기</button><br></br>
+      <h1>{formatTime(today)} 출석현황</h1>
       <div id="table-container">
         <table>
           <thead>
             <tr>
-              <th>출석날짜</th>
-              <th>출석여부</th>
               <th>이름</th>
+              <th>출석여부</th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{formatTime(item.attendanceTime)}</td>
-                <td>{formatAttendence(item.attendanceBoolean)}</td>
                 <td>{item.studentName}</td>
+                <td>{formatAttendence(item.attendanceBoolean)}</td>
               </tr>
             ))}
           </tbody>
