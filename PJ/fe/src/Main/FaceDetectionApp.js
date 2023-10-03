@@ -53,7 +53,7 @@ function ImageClassifierApp() {
           </li>
         ))}
       </ul>
-      <video ref={videoRef} autoPlay muted width="224" height="224" />
+      <video ref={videoRef} autoPlay muted width="500" height="500" />
     </div>
   );
 }
