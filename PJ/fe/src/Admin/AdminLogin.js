@@ -8,7 +8,7 @@ function AdminLogin() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3003/api/adminLogin', {
+      const response = await axios.post('http://192.168.10.157:3003/api/adminLogin', {
         Password, 
       });
 

@@ -6,7 +6,7 @@ function AdminUserList() {
 
   useEffect(() => {
     // 서버로부터 학생 목록을 가져오는 요청
-    axios.get('http://localhost:3003/api/studentList')
+    axios.get('http://192.168.10.157:3003/api/studentList')
     .then((response) => {
         // 서버에서 학생 목록을 받아온 경우
         setStudents(response.data.students); // "students" 키를 참조하여 데이터를 가져옵니다.
