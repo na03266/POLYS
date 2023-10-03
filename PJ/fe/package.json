@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@teachablemachine/image": "^0.8.5",
-    "@tensorflow/tfjs": "^4.11.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
