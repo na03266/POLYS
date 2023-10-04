@@ -1,37 +1,73 @@
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import React, { Component } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-function Mainthree() {
-  const sceneRef = useRef();
-  const camera = new THREE.PerspectiveCamera(75, 300 / 500, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
+class ThreeScene extends Component {
+  constructor(props) {
+    super(props);
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer.setSize(300, 500);
+    this.renderer.setClearColor(0xffffff);
 
-  useEffect(() => {
-    const scene = new THREE.Scene();
-    renderer.setSize(300, 500); // 크기 조정
-    sceneRef.current.appendChild(renderer.domElement);
+    this.camera.position.z = 5;
+    this.controls = null;
+    this.model = null;
+    this.target = new THREE.Vector3();
 
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    renderer.setClearColor(0xffffff); // 0xffffff는 흰색을 나타내는 16진수입니다.
+    // 주변 조명 추가
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // 색상과 강도 조절
+    this.scene.add(ambientLight);
 
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // 디렉셔널 라이트 추가
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // 색상과 강도 조절
+    directionalLight.position.set(1, 1, 1); // 광원의 위치 설정
+    this.scene.add(directionalLight);
+  }
 
-    // 카메라 위치 조정
-    camera.position.set(0, 0, 2);
+  componentDidMount() {
+    this.mount.appendChild(this.renderer.domElement);
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.minDistance = 1;
+    this.controls.maxDistance = 10;
 
-    const animate = () => {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
+    const loader = new GLTFLoader();
 
-    animate();
-  }, []);
+    loader.load(
+      "/blender/hwangjae.gltf",
+      (gltf) => {
+        this.model = gltf.scene;
 
-  return <div ref={sceneRef}></div>;
+        this.model.scale.set(0.85, 0.85, 0.85);
+        const boundingBox = new THREE.Box3().setFromObject(this.model);
+        boundingBox.getCenter(this.target);
+        this.model.position.set(0, -1, 0);
+        this.model.rotation.x = THREE.MathUtils.degToRad(20);
+        this.scene.add(this.model);
+
+        
+      },
+      undefined,
+      (error) => {
+        console.error("Failed to load glTF model", error);
+      }
+    );
+
+    this.animate();
+  }
+
+  animate = () => {
+    requestAnimationFrame(this.animate);
+    this.controls.target.copy(this.target);
+    this.controls.update();
+    this.renderer.render(this.scene, this.camera);
+  };
+
+  render() {
+    return <div ref={(ref) => (this.mount = ref)} style={{ width: "300px", height: "500px", display: "flex", justifyContent: "center", alignItems: "center" }} />;
+  }
 }
 
-export default Mainthree;
+export default ThreeScene;
