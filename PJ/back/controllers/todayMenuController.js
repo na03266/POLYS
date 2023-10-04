@@ -24,7 +24,7 @@ exports.todayMenu = (req, res) => {
         // 날짜와 식사 구분 추출
         const dateScript = tds.eq(0).find('script').text().trim();
         const date = extractDate(dateScript); // 날짜 파싱 함수로 변경
-        const mealType = tds.eq(1).text().trim();
+        const mealType = tds.eq(3).find('span').text().trim();
         const menu = tds.eq(2).find('span').text().trim();
 
         // 토요일과 일요일 데이터는 제외하고 추가
