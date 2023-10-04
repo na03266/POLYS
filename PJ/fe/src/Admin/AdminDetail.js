@@ -68,7 +68,15 @@ function AdminDetail() {
               {attendanceInfo.map((item, index) => (
                 <tr key={index}>
                   <td>{formatTime(item.attendanceTime)}</td>
-                  <td>{item.attendanceBoolean === 1 ? '지각' : '출석'}</td>
+                  <td>
+                    {item.attendanceBoolean === 0
+                      ? '출석'
+                      : item.attendanceBoolean === 1
+                      ? '지각'
+                      : item.attendanceBoolean === 2
+                      ? '결석'
+                      : '알 수 없음'}
+                  </td>
                 </tr>
               ))}
             </tbody>
