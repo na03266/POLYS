@@ -13,23 +13,24 @@ axios.get(url)
     // 식단 정보를 포함한 표(table) 요소를 선택합니다.
     const table = $('.tbl_table.menu');
 
-    // 'lunch'와 'dinner' 정보만을 저장할 객체를 생성합니다.
-    const meals = {
-      lunch: [],
-      dinner: [],
-    };
+    // 'lunch'와 'dinner' 정보를 저장할 객체들을 생성합니다.
+    const lunchData = [];
+    const dinnerData = [];
 
     table.find('td').each((index, element) => {
       const cellText = $(element).text().trim();
       if (index % 4 === 2) {
-        meals.lunch.push(cellText); // 'lunch' 정보만 저장
+        lunchData.push(cellText); // 'lunch' 정보를 저장
       } else if (index % 4 === 3) {
-        meals.dinner.push(cellText); // 'dinner' 정보만 저장
+        dinnerData.push(cellText); // 'dinner' 정보를 저장
       }
     });
 
-    // 데이터를 JSON 형식으로 출력
-    console.log(JSON.stringify(meals, null, 2));
+    // 'lunch'와 'dinner' 정보를 따로따로 JSON 형식으로 출력
+    const lunchJson = JSON.stringify(lunchData, null, 2);
+    const dinnerJson = JSON.stringify(dinnerData, null, 2);
+    console.log('Lunch Data:\n', lunchJson);
+    console.log('\nDinner Data:\n', dinnerJson);
   })
   .catch((error) => {
     console.error(error);
