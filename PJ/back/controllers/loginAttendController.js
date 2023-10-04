@@ -6,7 +6,7 @@ exports.loginAttend = (req, res) => {
   console.log({ studentID, attendanceTime, attendanceBoolean });
 
   db.query(
-    'INSERT INTO attendance (studentID, attendanceTime, attendanceBoolean) VALUES (?, ?, ?);',
+    'INSERT INTO todayattendance (studentID, attendanceTime, attendanceBoolean) VALUES (?, ?, ?);',
     [studentID, attendanceTime, attendanceBoolean],
     (err, result) => {
       if (err) {

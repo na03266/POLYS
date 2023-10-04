@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function AdminLastRecord() {
@@ -7,7 +7,7 @@ function AdminLastRecord() {
 
   const getAttend = async () => {
     try {
-      const response = await axios.get('http://localhost:3003/api/getAttend');
+      const response = await axios.get('http://192.168.10.157:3003/api/todayAttend');
 
       if (response.status === 200) {
         const data = response.data.attendances;

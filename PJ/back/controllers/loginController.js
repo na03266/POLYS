@@ -1,11 +1,11 @@
 const db = require('../db.js');
 
 exports.login = (req, res) => {
-  const { studentNumber, studentAuthentication1 } = req.body;
+  const { studentID } = req.body;
 
   db.query(
-    'SELECT studentID, studentNumber, studentName FROM student WHERE studentNumber = ? AND studentAuthentication1 = ?',
-    [studentNumber, studentAuthentication1],
+    'SELECT studentID, studentNumber, studentName FROM student WHERE studentID = ?',
+    [studentID],
     (err, result) => {
       if (err) {
         console.error('로그인 오류:', err);

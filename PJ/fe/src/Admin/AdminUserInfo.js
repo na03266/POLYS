@@ -1,4 +1,6 @@
 import React from 'react'
+import AdminUserList from './AdminUserList';
+
 
 function AdminUserInfo() {
 
@@ -7,8 +9,10 @@ function AdminUserInfo() {
       };
 
   return (
-    <div>AdminUserInfo
-        <button onClick={goBack}>뒤로가기</button>
+    <div>
+        <button onClick={goBack}>뒤로가기</button><br></br>
+        <AdminUserList/>
+        
     </div>
   )
 }
