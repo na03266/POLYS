@@ -1,0 +1,36 @@
+/* FoodModal.css (FoodModal 컴포넌트와 같은 디렉터리에 생성) */
+
+.food-modal {
+    display: none; /* 모달 초기에는 숨김 상태로 설정 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* 처음에 투명 상태로 시작 */
+    transition: opacity 0.3s ease-in-out; /* 페이드 인/아웃 효과를 줍니다. */
+  }
+  
+  .food-modal.open {
+    display: block; /* 모달 열기 상태에서 보이도록 설정 */
+    opacity: 1; /* 투명도를 1로 설정하여 나타나게 합니다. */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .close-button:hover {
+    color: #f00; /* 닫기 버튼에 호버 효과를 주기 위한 스타일 */
+  }
+  

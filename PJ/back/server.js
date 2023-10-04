@@ -24,6 +24,10 @@ app.use('/api/studentList', studentListRouter);
 const todayAttendRouter = require('./routes/todayAttend'); 
 app.use('/api/todayAttend', todayAttendRouter);
 
+//식단표 부분
+const todayMenuRouter = require('./routes/todayMenu'); 
+app.use('/api/todayMenu', todayMenuRouter);
+
 const port = process.env.PORT || 3003;
 app.listen(port, () => {
   console.log(`서버가 포트 ${port}에서 실행 중입니다.`);
