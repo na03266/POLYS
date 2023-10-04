@@ -22,6 +22,7 @@ function FaceDetectionApp() {
     jinhee: 4,
     kwangsik: 2,
   };
+  
 
   useEffect(() => {
     // 모델 파일 및 메타데이터 파일을 로드합니다.
@@ -126,11 +127,15 @@ function FaceDetectionApp() {
         const isBeforeNineAM = currentTime.getHours() < 9;
         const attendanceStatus = isBeforeNineAM ? 0 : 1;
         setAttendanceBoolean(attendanceStatus);
+        
 
         // 출석 정보를 서버로 POST 요청 보내기
-        const formattedAttendanceTime = currentTime.toISOString().slice(0, 19).replace('T', ' ');
+        const localTime = new Date(currentTime.getTime() - currentTime.getTimezoneOffset() * 60000);
+        const formattedTime = localTime.toISOString().slice(0, 19).replace('T', ' ');
+        console.log(formattedTime);
+         
         await axios.post('http://192.168.10.157:3003/api/loginAttend', {
-          attendanceTime: formattedAttendanceTime,
+          attendanceTime: formattedTime,
           studentID,
           attendanceBoolean: attendanceStatus,
         });
