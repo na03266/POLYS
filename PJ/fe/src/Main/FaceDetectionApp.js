@@ -126,9 +126,12 @@ function FaceDetectionApp() {
         const isBeforeNineAM = currentTime.getHours() < 9;
         const attendanceStatus = isBeforeNineAM ? 0 : 1;
         setAttendanceBoolean(attendanceStatus);
+        
 
         // 출석 정보를 서버로 POST 요청 보내기
+        const attendanceTime = new Date();
         const formattedAttendanceTime = currentTime.toISOString().slice(0, 19).replace('T', ' ');
+        console.log(formattedAttendanceTime); 
         await axios.post('http://192.168.10.157:3003/api/loginAttend', {
           attendanceTime: formattedAttendanceTime,
           studentID,
