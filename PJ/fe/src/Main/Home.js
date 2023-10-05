@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import ThreeBox from './ThreeBox';
 import {FaChalkboardTeacher} from 'react-icons/fa';
 import {MdTouchApp} from 'react-icons/md';
 import Clock from './Clock';
+import FoodModal from './foodmodal';
 
 
 function Home() {
@@ -18,6 +19,13 @@ function Home() {
     const goConfirm = () => {
       window.location.href='/confirm';
     }
+    const [showModal, setShowModal] = useState(false);
+
+  // 모달을 열고 닫는 함수
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div>
         <Clock />
@@ -29,6 +37,15 @@ function Home() {
         <br></br>
         <button onClick={goRegist}>회원가입</button>
         <button onClick={goLogin}>로그인</button>
+        <div>
+          <h1>식단 정보</h1>
+          <button onClick={toggleModal}>식단 모달 열기</button>
+            {showModal && (
+              <FoodModal
+                onClose={toggleModal}
+              />
+          )}
+        </div>
     </div>
   )
 }

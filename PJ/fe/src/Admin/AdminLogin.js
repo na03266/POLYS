@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
-
+import './css/AdminLogin.css';
 
 function AdminLogin() {
   const [loginError, setLoginError] = useState(null);
@@ -8,7 +8,7 @@ function AdminLogin() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3003/api/adminLogin', {
+      const response = await axios.post('http://192.168.10.157:3003/api/adminLogin', {
         Password, 
       });
 
@@ -26,10 +26,10 @@ function AdminLogin() {
       setLoginError('로그인 중 오류가 발생했습니다.');
     }
   };
-
+//미넝림ㄴㅇㄻㄴㅇㄹ
   return (
-    <div>
-      AdminLogin
+    <div className='LoginDiv'>
+      <h1>Admin Login</h1>
       <input
         type="Password"
         placeholder="비밀번호를 입력하세요"
