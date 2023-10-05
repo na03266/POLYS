@@ -1,0 +1,17 @@
+.attendance-bt{
+    background: none;
+    border: none;
+    font-Size: 100px;
+    font-Weight: bold;
+    display: inline-block;
+    margin-Bottom: 100px;
+
+}
+.attendance-bt:hover {
+    /* background-color: #007bff;  */
+    /* 호버 시 배경색 변경 */
+    /* border: 2px solid #007bff;  */
+    /* 호버 시 테두리 추가 */
+    color: rgb(42, 162, 221); 
+    /* 호버 시 글자색 변경 */
+  }
