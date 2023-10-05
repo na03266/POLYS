@@ -26,7 +26,7 @@ function AdminLogin() {
       setLoginError('로그인 중 오류가 발생했습니다.');
     }
   };
-
+//미넝림ㄴㅇㄻㄴㅇㄹ
   return (
     <div className='LoginDiv'>
       <h1>Admin Login</h1>
