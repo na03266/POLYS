@@ -23,7 +23,8 @@ function AdminUserList() {
 
   return (
     <div>
-      <h1 className='stulist'>학생 목록</h1>
+      <h1 className='chul'>학생 목록</h1>
+      <div id="table-container" className='LRtc'>
       <table className='tablist'>
         <thead className='thelist'>
           <tr className='trlist'>
@@ -42,6 +43,7 @@ function AdminUserList() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

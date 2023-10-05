@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Set height to 100% of viewport height for vertical centering */
+    height: 100vh; 
   }
 
   input[type="password"] {
@@ -24,6 +24,7 @@
     cursor: pointer;
     margin-top: 20px;
     font-size: 24px;
+    margin-bottom: 500px;
     
   }
   
@@ -33,7 +34,7 @@
   }
 
   .Loginh {
-    font-size: 150px;
-    margin-bottom: 800px;
+    font-size: 100px;
+    margin-bottom: 200px;
   }
   

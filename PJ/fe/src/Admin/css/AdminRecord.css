@@ -6,10 +6,12 @@
     padding: 10px 20px;
     margin-right: 10px;
     cursor: pointer;
-    border-radius: 10px;
-    margin-left: 260px;
+    border-radius: 20px;
+    margin-left: 53px;
     margin-top:5%;
-    width: 25%;
+    width: 40%;
+    height: 80px;
+    font-size: 20px;
   }
   
   .backB {
@@ -17,9 +19,11 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    width: 25%;
+    width: 40%;
+    height: 80px;
+    font-size: 20px;
   }
   
   .chul {
@@ -27,12 +31,13 @@
     font-size: 50px;
     margin: 20px 0;
     text-align: center; /* 텍스트를 가운데로 정렬합니다. */
-    margin-top: 50px;
+    margin-top: 150px;
   }
   
   #table-container {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 100px;
   }
   
   table {

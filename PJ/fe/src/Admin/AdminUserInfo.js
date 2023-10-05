@@ -10,9 +10,8 @@ function AdminUserInfo() {
 
   return (
     <div>
-        <button className='backBu' onClick={goBack}>뒤로가기</button><br></br>
         <AdminUserList/>
-        
+        <button className='backBu' onClick={goBack}>뒤로가기</button>
     </div>
   )
 }

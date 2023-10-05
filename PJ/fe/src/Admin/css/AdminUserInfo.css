@@ -1,14 +1,15 @@
 .backBu {
-    margin-top: 5%;
-    margin-left: 25%;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 50%;
-    height: 50px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 40%;
+  height: 70px;
+  font-size: 20px;
+  margin-left: 300px;
+  margin-top: 20px;
   }
   
 .ect{
@@ -18,16 +19,11 @@
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    width: 25%;
+    width: 60%;
     height: 40px;
 }
 
-.stulist {
-    font-size: 30px;
-    margin: 20px 0;
-    text-align: center;
-  }
-  
+
   .tablist {
     max-width: 80%;
     margin: 0 auto;

@@ -58,8 +58,6 @@ function AdminLastRecord() {
   return (
     <div>
       
-      <button onClick={getAttend} className='joeB'>조회하기</button>
-      <button onClick={goBack} className='backB'>뒤로가기</button>
       <h1 className='chul'>{formatTime(today)} 출석현황</h1>
       <div id="table-container">
         <table>
@@ -78,6 +76,8 @@ function AdminLastRecord() {
             ))}
           </tbody>
         </table>
+      <button onClick={getAttend} className='joeB'>조회하기</button>
+      <button onClick={goBack} className='backB'>뒤로가기</button>
       </div>
     </div>
   );
