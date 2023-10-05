@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
-
+import './css/AdminLogin.css';
 
 function AdminLogin() {
   const [loginError, setLoginError] = useState(null);
@@ -28,8 +28,8 @@ function AdminLogin() {
   };
 
   return (
-    <div>
-      AdminLogin
+    <div className='LoginDiv'>
+      <h1>Admin Login</h1>
       <input
         type="Password"
         placeholder="비밀번호를 입력하세요"
