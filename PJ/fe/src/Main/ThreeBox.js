@@ -7,22 +7,15 @@ import Mainthree5 from './Mainthree5';
 import axios from 'axios';
 
 function ThreeBox() {
-  const  parentContainerStyle = {
-    width: '100%',
-    height: '600px',
-    display: 'flex',
-    justifyContent: 'center', 
-    alignItems: 'center',
-  };
-
-
   const containerStyle = {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
+    gridGap: '10px', // Gap between items
   };
 
   const itemStyle = {
-    flex: 'calc(33.33% - 10px)', // 열은 3개, 간격을 고려하여 33.33%로 설정
-    margin: '5px', // 아이템 간 간격
+    flex: '1', // Take up equal space within the grid cell
+    margin: '5px', // Item margin
   };
 
   const [getAttenderror, setgetAttenderror] = useState(null);
@@ -45,20 +38,11 @@ function ThreeBox() {
         const data = response.data.attendances;
         setJsonData(data);
 
-        const found1 = data.some(item => item.studentName === "이광식");
-        setShowMainThree(found1);
-
-        const found2 = data.some(item => item.studentName === "백민진");
-        setShowMainThree2(found2);
-
-        const found3 = data.some(item => item.studentName === "나황제");
-        setShowMainThree3(found3);
-
-        const found4 = data.some(item => item.studentName === "안진희");
-        setShowMainThree4(found4);
-
-        const found5 = data.some(item => item.studentName === "전수빈");
-        setShowMainThree5(found5);
+        setShowMainThree(data.some(item => item.studentName === "이광식"));
+        setShowMainThree2(data.some(item => item.studentName === "백민진"));
+        setShowMainThree3(data.some(item => item.studentName === "나황제"));
+        setShowMainThree4(data.some(item => item.studentName === "안진희"));
+        setShowMainThree5(data.some(item => item.studentName === "전수빈"));
       } else {
         const errorData = response.data;
         setgetAttenderror(errorData.message || '가져오기 실패');
@@ -70,7 +54,6 @@ function ThreeBox() {
   };
 
   return (
-    <div style={parentContainerStyle} >
     <div style={containerStyle}>
       <div style={itemStyle}>
         {showMainThree && <MainThree />}
@@ -87,7 +70,6 @@ function ThreeBox() {
       <div style={itemStyle}>
         {showMainThree5 && <Mainthree5 />}
       </div>
-    </div>
     </div>
   );
 }
