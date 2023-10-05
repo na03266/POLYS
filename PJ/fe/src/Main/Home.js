@@ -10,12 +10,6 @@ function Home() {
     const goAdmin = () => {               
         window.location.href='/admin';
       };
-    // const goRegist = () => {               
-    //   window.location.href='/regist';
-    // };
-    // const goLogin = () => {               
-    //   window.location.href='/login';
-    // };
     const goConfirm = () => {
       window.location.href='/confirm';
     }
@@ -35,8 +29,14 @@ function Home() {
         </div>
         <button style={{border:'none', background:'none', fontSize:'35px', marginLeft:'auto', marginRight:'auto', display:'block', marginBottom:'100px'}} onClick={goConfirm}>출석하기<MdTouchApp /></button>
         <br></br>
-        <button onClick={goRegist}>회원가입</button>
-        <button onClick={goLogin}>로그인</button>
+        <div>
+          <h1 onClick={toggleModal} style={{fontSize:'100px'}}>식단정보</h1>          
+            {showModal && (
+              <FoodModal
+                onClose={toggleModal}
+              />
+          )}
+        </div>
     </div>
   )
 }
