@@ -99,6 +99,7 @@ function FaceDetectionApp() {
   // "아니오" 버튼을 클릭하여 확인할 때 실행되는 함수
   const handleNoClick = () => {
     setShowModal(false); // 모달 닫기
+    window.location.href = '/Confirmerror';
   };
 
   const handleLogin = async () => {
