@@ -7,6 +7,15 @@ import Mainthree5 from './Mainthree5';
 import axios from 'axios';
 
 function ThreeBox() {
+  const  parentContainerStyle = {
+    width: '100%',
+    height: '600px',
+    display: 'flex',
+    justifyContent: 'center', 
+    alignItems: 'center',
+  };
+
+
   const containerStyle = {
     display: 'flex',
   };
@@ -61,6 +70,7 @@ function ThreeBox() {
   };
 
   return (
+    <div style={parentContainerStyle} >
     <div style={containerStyle}>
       <div style={itemStyle}>
         {showMainThree && <MainThree />}
@@ -77,6 +87,7 @@ function ThreeBox() {
       <div style={itemStyle}>
         {showMainThree5 && <Mainthree5 />}
       </div>
+    </div>
     </div>
   );
 }
