@@ -36,37 +36,42 @@ const FoodModal = ({ onClose }) => {
     <div className={`food-modal ${isModalOpen ? 'open' : 'closed'}`}>
       <div className="modal-content">
         <button className="close-button" onClick={closeModal}>닫기</button>
-          {menuData && (
-            <>
-              <div style={{ display: 'flex'}}>
-                {menuData.map((dayMenu, index) => (
-                  <div key={index} style={{ flex: '1', marginRight:'20px' }}>
-                    <h3>{dayMenu.date}</h3>
+        {menuData && (
+          <table>
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>점심</th>
+                <th>저녁</th>
+              </tr>
+            </thead>
+            <tbody>
+              {menuData.map((dayMenu, index) => (
+                <tr key={index}>
+                  <td>{dayMenu.date}</td>
+                  <td>
                     <pre className="yoyo">
-                      <strong><h3> 점심</h3></strong>
                       {dayMenu.menu
-                        .split('\n') 
-                        .map((menuItem, itemIndex) => {
-                          const trimmedMenuItem = menuItem.trim();
-                          return itemIndex === 0 ? `  ${trimmedMenuItem.replace(/,/g, '')}` : ` ${trimmedMenuItem.replace(/,/g, '')}`;
-                        }) 
-                        .join('\n')} 
+                        .split('\n')
+                        .map((menuItem, itemIndex) => (
+                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{menuItem.trim().replace(/,/g, '')}</div>
+                        ))}
                     </pre>
+                  </td>
+                  <td>
                     <pre>
-                      <strong><h3> 저녁</h3></strong>
                       {dayMenu.mealType
-                        .split('\n') 
-                        .map((menuItem, itemIndex) => {
-                          const trimmedMenuItem = menuItem.trim();
-                          return itemIndex === 0 ? `  ${trimmedMenuItem.replace(/,/g, '')}` : ` ${trimmedMenuItem.replace(/,/g, '')}`;
-                        }) 
-                        .join('\n')} 
+                        .split('\n')
+                        .map((menuItem, itemIndex) => (
+                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{menuItem.trim().replace(/,/g, '')}</div>
+                        ))}
                     </pre>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

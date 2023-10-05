@@ -37,7 +37,7 @@ function Home() {
           onClick={toggleModal}
           style={{ fontSize: '75px', margin: '0 20px', textAlign: 'left' }}
         >
-          식단정보<PiBowlFoodFill />
+          밥묵자<PiBowlFoodFill />
         </p>
         <FaChalkboardTeacher
           style={{ fontSize: '75px', textAlign: 'right' }}
