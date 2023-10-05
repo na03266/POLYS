@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './css/AdminDetail.css';
+
 
 function AdminDetail() {
   const { studentID } = useParams();
@@ -49,19 +51,19 @@ function AdminDetail() {
 
   return (
     <div>
-      <button onClick={goBack}>뒤로가기</button>
+      <button onClick={goBack} className='detailB'>뒤로가기</button>
       {error ? (
         <p>{error}</p>
       ) : (
         <div>
-          <h1>학생 상세 정보</h1>
-          <h2>{studentInfo.studentName}</h2>
-          <p>학번: {studentInfo.studentNumber}</p>
-          <table>
-            <thead>
-              <tr>
-                <th>날짜</th>
-                <th>출석 여부</th>
+          <h1 className='detailstuh'>학생 상세 정보</h1>
+          <h2 className='detailname'>{studentInfo.studentName}</h2>
+          <p className='detailpp'>학번: {studentInfo.studentNumber}</p>
+          <table className='detailtb'>
+            <thead className='detailthe'>
+              <tr className='detailtr'>
+                <th className='detailth'>날짜</th>
+                <th className='detailth'>출석 여부</th>
               </tr>
             </thead>
             <tbody>

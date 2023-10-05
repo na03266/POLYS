@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './css/AdminUserInfo.css'
 
 function AdminUserList() {
   const [students, setStudents] = useState([]);
@@ -22,13 +23,13 @@ function AdminUserList() {
 
   return (
     <div>
-      <h1 className='studentlist'>학생 목록</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>학번</th>
-            <th>이름</th>            
-            <th>수정</th>
+      <h1 className='stulist'>학생 목록</h1>
+      <table className='tablist'>
+        <thead className='thelist'>
+          <tr className='trlist'>
+            <th className='thlist'>학번</th>
+            <th className='thlist'>이름</th>            
+            <th className='thlist'>수정</th>
           </tr>
         </thead>
         <tbody>

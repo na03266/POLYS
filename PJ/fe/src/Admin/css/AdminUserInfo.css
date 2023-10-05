@@ -1,18 +1,15 @@
 .backBu {
     margin-top: 5%;
+    margin-left: 25%;
     background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    width: 20%;
+    width: 50%;
     height: 50px;
   }
-
-.studentlist{
-    text-align: center;
-}
   
 .ect{
     background-color: #000000;
@@ -24,3 +21,37 @@
     width: 25%;
     height: 40px;
 }
+
+.stulist {
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .tablist {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .thelist {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .thlist, .tdlist {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .trlist:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .ect {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
