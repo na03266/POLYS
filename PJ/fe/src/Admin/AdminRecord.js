@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './css/AdminRecord.css';
 
 
 function AdminLastRecord() {
@@ -56,9 +57,10 @@ function AdminLastRecord() {
 
   return (
     <div>
-      <button onClick={getAttend}>조회하기</button>
-      <button onClick={goBack}>뒤로가기</button><br></br>
-      <h1>{formatTime(today)} 출석현황</h1>
+      
+      <h1 className='chul'>{formatTime(today)} 출석현황</h1>
+      <button onClick={getAttend} className='joeB'>조회하기</button>
+      <button onClick={goBack} className='backB'>뒤로가기</button>
       <div id="table-container">
         <table>
           <thead>

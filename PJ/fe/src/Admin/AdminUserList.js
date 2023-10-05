@@ -22,7 +22,7 @@ function AdminUserList() {
 
   return (
     <div>
-      <h1>학생 목록</h1>
+      <h1 className='studentlist'>학생 목록</h1>
       <table>
         <thead>
           <tr>
@@ -36,7 +36,7 @@ function AdminUserList() {
             <tr key={student.studentID}>              
               <td>{student.studentNumber}</td>
               <td>{student.studentName}</td>
-              <td><button onClick={() => goDetail(student.studentID)}>자세히</button></td>
+              <td><button onClick={() => goDetail(student.studentID)} className='ect'>자세히</button></td>
             </tr>
           ))}
         </tbody>

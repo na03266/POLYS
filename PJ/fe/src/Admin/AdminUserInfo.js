@@ -1,6 +1,6 @@
 import React from 'react'
 import AdminUserList from './AdminUserList';
-
+import './css/AdminUserInfo.css';
 
 function AdminUserInfo() {
 
@@ -10,7 +10,7 @@ function AdminUserInfo() {
 
   return (
     <div>
-        <button onClick={goBack}>뒤로가기</button><br></br>
+        <button className='backBu' onClick={goBack}>뒤로가기</button><br></br>
         <AdminUserList/>
         
     </div>

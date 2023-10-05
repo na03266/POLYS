@@ -10,31 +10,30 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 680px;
+    width: 500px;
   }
 
   
   button[type="button"] {
     width: 50%;
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
     padding: 20px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 100px;
     cursor: pointer;
     margin-top: 20px;
     font-size: 24px;
+    
   }
   
   /* Style for the login button on hover */
   button:hover {
-    background-color: #0056b3;
+    background-color: #000000;
   }
 
-  h1 {
-    font-size: 100px;
-    position: absolute; /* Position the heading absolutely */
-    top: 850px; /* Adjust the top value as needed to move it higher */
-    
+  .Loginh {
+    font-size: 150px;
+    margin-bottom: 800px;
   }
   

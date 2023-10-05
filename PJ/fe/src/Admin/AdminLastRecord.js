@@ -48,8 +48,8 @@ function AdminLastRecord() {
 
   return (
     <div>
-      <button onClick={getAttend}>조회하기</button>
-      <button onClick={goBack}>뒤로가기</button>
+      <button className='joeB' onClick={getAttend}>조회하기</button>
+      <button className='backB' onClick={goBack}>뒤로가기</button>
       <div id="table-container">
         <table>
           <thead>

@@ -1,0 +1,26 @@
+.backBu {
+    margin-top: 5%;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+  }
+
+.studentlist{
+    text-align: center;
+}
+  
+.ect{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 25%;
+    height: 40px;
+}

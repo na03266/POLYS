@@ -1,5 +1,6 @@
 import React from 'react'
 import AdminLogout from './AdminLogout';
+import './css/AdminMenu.css';
 
 function AdminMenu() {
     const Name = localStorage.getItem("Name");
@@ -15,11 +16,14 @@ function AdminMenu() {
 
   return (
     <div>
-        <h1>{Name}님 환영합니다!</h1>
-        <AdminLogout/>
-        <button onClick={goRecord}>출석현황</button>
-        <button onClick={golastRecord}>지난기록</button>
-        <button onClick={goUserInfo}>학생별정보</button>
+        <h1 className='hi'>{Name}님,<br></br> 환영합니다!</h1>
+          
+        <button className='menubutton' onClick={goRecord}>출석현황</button>
+        <button className='menubutton' onClick={golastRecord}>지난기록</button>
+        <button className='menubutton' onClick={goUserInfo}>학생별정보</button>
+        <div>
+          <AdminLogout/>
+        </div>
     </div>
   )
 }

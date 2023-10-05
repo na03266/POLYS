@@ -29,7 +29,7 @@ function AdminLogin() {
 //미넝림ㄴㅇㄻㄴㅇㄹ
   return (
     <div className='LoginDiv'>
-      <h1>Admin Login</h1>
+      <h1 className='Loginh'>Admin Login</h1>
       <input
         type="Password"
         placeholder="비밀번호를 입력하세요"
