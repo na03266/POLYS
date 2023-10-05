@@ -10,12 +10,12 @@ function Home() {
     const goAdmin = () => {               
         window.location.href='/admin';
       };
-    const goRegist = () => {               
-      window.location.href='/regist';
-    };
-    const goLogin = () => {               
-      window.location.href='/login';
-    };
+    // const goRegist = () => {               
+    //   window.location.href='/regist';
+    // };
+    // const goLogin = () => {               
+    //   window.location.href='/login';
+    // };
     const goConfirm = () => {
       window.location.href='/confirm';
     }
@@ -37,15 +37,6 @@ function Home() {
         <br></br>
         <button onClick={goRegist}>회원가입</button>
         <button onClick={goLogin}>로그인</button>
-        <div>
-          <h1>식단 정보</h1>
-          <button onClick={toggleModal}>식단 모달 열기</button>
-            {showModal && (
-              <FoodModal
-                onClose={toggleModal}
-              />
-          )}
-        </div>
     </div>
   )
 }
