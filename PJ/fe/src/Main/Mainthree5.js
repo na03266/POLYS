@@ -36,7 +36,7 @@ class ThreeScene extends Component {
     const loader = new GLTFLoader();
 
     loader.load(
-      "/blender/gwangsick.gltf",
+      "/blender/subibi.gltf",
       (gltf) => {
         this.model = gltf.scene;
 
