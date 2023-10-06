@@ -32,14 +32,21 @@ function App() {
 
   // 시간 표시 부분의 글꼴 크기 스타일
   const timeStyle = {
-    fontSize: '45px', // 원하는 크기로 조절하세요
+    fontSize: '100px', // 원하는 크기로 조절하세요
     fontWeight: 'bold', // 원하는 폰트 두께로 조절하세요
+    margin:'200px',
+    color:'rgb(255, 50, 0)',
+    
   };
 
   return (
+    <div>
+    
+    
     <div style={clock}>
-      {/* <h1>현재 시간</h1> */}
+      {/* <p style={{fontSize:'50px'}}>현재시간</p> */}
       <p style={timeStyle}>{currentHourMinute}</p>
+    </div>
     </div>
   );
 }

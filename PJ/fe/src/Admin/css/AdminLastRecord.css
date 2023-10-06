@@ -1,0 +1,48 @@
+.LRtab {
+    max-width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+.LRtc{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 500px;
+}
+
+  .LRthe {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    
+  }
+  
+  .LRtr:nth-child(even) {
+    
+    background-color: #f2f2f2;
+  }
+  
+  .LRth, .LRtd {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .LRth {
+    font-weight: bold;
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+  
+  .LRth:first-child,
+  .LRtd:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .LRth:last-child,
+  .LRtd:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  

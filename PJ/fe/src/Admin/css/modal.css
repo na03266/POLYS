@@ -4,14 +4,48 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #eee;
+    background-color: #dedede;
     z-index: 1000; /* 다른 요소 위에 보이도록 설정 */
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(45, 42, 46, 0.5);
   }
-  
+
+.modalB {
+  background-color: #c6c6c6;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.modalB:hover{
+  background-color: #868892;
+}
   /* 모달 열린 상태에만 보이도록 설정 */
   .modal.open {
     display: block;
   }
   
+  .logoutbutton{
+    background-color: #000000;
+    color: #d1d1d1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 90px;
+    margin: 10px;
+    cursor: pointer;
+    width: 80%;
+    display: block; /* 블록 요소로 설정하여 가로 정렬 가능하도록 함 */
+    margin: 0 auto; 
+    margin-top: 370px;
+    height:100px; 
+    font-size: 30px;  
+  }
+
+  .logoutbutton:hover {
+    background-color: #9b3434; /* 원하는 빨간색으로 변경하세요 */
+  }

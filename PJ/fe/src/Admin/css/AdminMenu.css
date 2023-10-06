@@ -1,0 +1,31 @@
+.hi{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    font-size: 100px;
+}
+
+.menubutton-container {
+    text-align: center; /* 가로 가운데 정렬 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .menubutton {
+    background-color: #545354;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 340px;
+    height: 500px;
+    font-size: 45px;
+    margin-left: 15px;
+  }
+
+.menubutton:hover {
+    background-color: #868892; /* 원하는 빨간색으로 변경하세요 */
+  }

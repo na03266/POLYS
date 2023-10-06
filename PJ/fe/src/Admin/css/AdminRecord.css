@@ -1,0 +1,70 @@
+/* AdminLastRecord.css */
+.joeB {
+    background-color: #6ea287;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 53px;
+    margin-top:5%;
+    width: 40%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  .backB {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 40%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  .chul {
+    
+    font-size: 50px;
+    margin: 20px 0;
+    text-align: center; /* 텍스트를 가운데로 정렬합니다. */
+    margin-top: 150px;
+  }
+  
+  #table-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  

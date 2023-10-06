@@ -13,8 +13,30 @@
   opacity: 0; /* 처음에 투명 상태로 시작 */
   transition: opacity 0.3s ease-in-out; /* 페이드 인/아웃 효과를 줍니다. */
   text-align: center; /* 텍스트 가운데 정렬 */
+  width: 70%;
+  height: 58%;
+  padding: 20px;
 }
 
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.modal-content{
+  margin-top: 5%;
+}
 
 
 .food-modal.open {
