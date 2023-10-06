@@ -1,31 +1,100 @@
-.hi{
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 200px;
-    font-size: 100px;
+/* 텍스트 페이드 인 및 위에서 아래로 내려오는 애니메이션 */
+.hi, .menubutton-container, .menubutton {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards, slideDown 0.5s ease forwards;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* 시작 위치에서 위로 20px 이동하여 시작 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 최종 위치로 이동하여 나타남 */
+  }
+}
+
+/* 버튼에 페이드 인 및 위에서 아래로 내려오는 애니메이션 */
+.menubutton-container, .menubutton {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards, slideDown 0.5s ease forwards;
+  animation-delay: 1s; /* 텍스트 페이드 인 애니메이션 후 1초 지연 */
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px); /* 시작 위치에서 위로 20px 이동하여 시작 */
+  }
+  to {
+    transform: translateY(0); /* 최종 위치로 이동하여 나타남 */
+  }
+}
+
+/* 나머지 스타일과 호버 애니메이션 */
 .menubutton-container {
-    text-align: center; /* 가로 가운데 정렬 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .menubutton {
-    background-color: #545354;
-    color: #ffffff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 340px;
-    height: 500px;
-    font-size: 45px;
-    margin-left: 15px;
-  }
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menubutton {
+  background-color: #545354;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 340px;
+  height: 500px;
+  font-size: 45px;
+  margin-left: 15px;
+  transition: background-color 0.5s ease, transform 0.5s ease; /* 호버 애니메이션 추가 */
+}
+
+/* 나머지 스타일과 호버 애니메이션 */
+.menubutton-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .menubutton:hover {
-    background-color: #868892; /* 원하는 빨간색으로 변경하세요 */
+  background-color: #151515;
+  transform: scale(1.05); /* 호버 시 버튼 확대 효과 */
+}
+
+.hi {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 200px;
+  font-size: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.menubutton {
+  background-color: #545354;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 340px;
+  height: 500px;
+  font-size: 45px;
+  margin-left: 15px;
+  transition: background-color 0.5s ease; /* 호버 애니메이션 추가 */
+}

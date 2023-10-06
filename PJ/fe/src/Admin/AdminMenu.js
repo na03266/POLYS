@@ -16,7 +16,7 @@ function AdminMenu() {
 
   return (
     <div>
-        <h1 className='hi'>{Name}님,<br></br> 환영합니다!</h1>
+        <h1 className='hi'>{Name}님<br></br> 환영합니다!</h1>
           
         <button className='menubutton' onClick={goRecord}>출석현황</button>
         <button className='menubutton' onClick={golastRecord}>지난기록</button>
