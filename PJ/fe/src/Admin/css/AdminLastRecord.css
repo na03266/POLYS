@@ -1,0 +1,7 @@
+.top_icon {
+    color: #007bff;
+    position: fixed;  /* 고정된 위치를 설정 */
+    bottom: 50px;     /* 하단에서 10px 떨어진 위치에 아이콘 배치 */
+    right: 50px;      /* 우측에서 10px 떨어진 위치에 아이콘 배치 */
+    cursor: pointer;  /* 아이콘 위로 마우스가 올라갔을 때 포인터 모양으로 변경 */
+}

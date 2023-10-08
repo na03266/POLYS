@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
+import './css/AdminLogin.css';
+import { RiAdminLine } from 'react-icons/ri';
 
 
 function AdminLogin() {
@@ -8,7 +10,7 @@ function AdminLogin() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3003/api/adminLogin', {
+      const response = await axios.post('http://192.168.10.157:3003/api/adminLogin', {
         Password, 
       });
 
@@ -28,18 +30,22 @@ function AdminLogin() {
   };
 
   return (
-    <div>
-      AdminLogin
-      <input
-        type="Password"
-        placeholder="비밀번호를 입력하세요"
-        value={Password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="button" onClick={handleLogin}>
-        로그인
-      </button>
+    <div className="admin-login-container">
+      <RiAdminLine className="admin_icon" size={70} />
+      관리자 로그인
+      <br />
+      <div className="input-group">
+        <input
+          type="Password"
+          placeholder="비밀번호를 입력하세요"
+          value={Password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button className="login_button" onClick={handleLogin}>
+          로그인
+        </button>
+      </div>
     </div>
   );
 }

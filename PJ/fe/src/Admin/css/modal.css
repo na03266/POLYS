@@ -15,3 +15,14 @@
     display: block;
   }
   
+  .modal_bt {
+    width: 70px;
+    height: 50px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }

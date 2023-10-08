@@ -1,0 +1,38 @@
+/* 전체 레이아웃 스타일링 */
+.admin-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 32px;
+}
+
+.admin_icon {
+    margin-top: 50px; /* 위쪽 여백을 추가하여 아이콘을 아래로 이동시킵니다. */
+}
+
+/* 입력 필드와 버튼을 행으로 배열하기 위한 스타일 */
+.input-group {
+    display: flex;
+    flex-direction: row; /* 요소들을 가로 방향으로 배열 */
+    align-items: center;
+    gap: 10px; /* 각 요소 사이에 간격 추가 */
+}
+
+/* 로그인 버튼 스타일링 */
+.login_button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 90px;
+    height: 30px;
+}
+
+.login_button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}

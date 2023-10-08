@@ -20,14 +20,14 @@ function AdminLogout() {
 
   return (
     <div>
-      <button onClick={handleLogout}>로그아웃</button>
+      <button className="AdminLogout" onClick={handleLogout}>로그아웃</button>
 
       {/* 모달 */}
       {isModalOpen && (
         <div className="modal open">
           <p>로그아웃하시겠습니까?</p>
-          <button onClick={handleConfirmLogout}>예</button>
-          <button onClick={handleCancelLogout}>아니오</button>
+          <button className='modal_bt' onClick={handleConfirmLogout}>예</button>
+          <button className='modal_bt' onClick={handleCancelLogout}>아니오</button>
         </div>
       )}
     </div>

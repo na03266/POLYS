@@ -3,22 +3,30 @@ import React, { useEffect, useState } from 'react';
 function MainLogin2() {
   const [countdown, setCountdown] = useState(5);
   const [currentTime, setCurrentTime] = useState(new Date());
+
+
   const studentName = localStorage.getItem('studentName');
+
+  
+
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
-        setCountdown((prevCountdown) => prevCountdown - 1);
-      }, 1000);
+      setCountdown((prevCountdown) => prevCountdown - 1);
+    }, 1000);
+
     const redirectTimer = setTimeout(() => {
       localStorage.removeItem('studentName');
+      localStorage.removeItem('studentID');
       window.location.href = '/';
     }, 5000);
 
     return () => {
-        clearInterval(timer);
-        clearTimeout(redirectTimer);
-      };
-    }, []);
+      clearInterval(timer);
+      clearTimeout(redirectTimer);
+    };
+  }, [currentTime]); 
 
   // 한글로 월, 일, 시, 분, 초를 형식화하여 표시
   const formatTime = (date) => {
@@ -36,7 +44,9 @@ function MainLogin2() {
       <h1>
         {studentName}님 ㅎㅇ요 <br></br>출석시간 {formatTime(currentTime)}
       </h1>
-      <h3>{countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}</h3>
+      <h3>
+        {countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}        
+      </h3>
     </div>
   );
 }

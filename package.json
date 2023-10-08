@@ -2,8 +2,5 @@
     "scripts": {
         "start:fe": "cd PJ/fe && npm start",
         "start:be": "cd PJ/back && node server.js"
-    },
-    "dependencies": {
-        "react-icons": "^4.11.0"
     }
 }

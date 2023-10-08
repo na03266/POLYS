@@ -15,6 +15,14 @@ const registRouter = require('./routes/regist');
 app.use('/api/regist', registRouter);
 const loginRouter = require('./routes/login'); 
 app.use('/api/login', loginRouter);
+const loginAttendRouter = require('./routes/loginAttend'); 
+app.use('/api/loginAttend', loginAttendRouter);
+const getAttendRouter = require('./routes/getAttend'); 
+app.use('/api/getAttend', getAttendRouter);
+const studentListRouter = require('./routes/studentList'); 
+app.use('/api/studentList', studentListRouter);
+const todayAttendRouter = require('./routes/todayAttend'); 
+app.use('/api/todayAttend', todayAttendRouter);
 
 const port = process.env.PORT || 3003;
 app.listen(port, () => {
