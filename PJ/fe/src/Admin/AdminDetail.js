@@ -51,7 +51,6 @@ function AdminDetail() {
 
   return (
     <div>
-      <button onClick={goBack} className='detailB'>뒤로가기</button>
       {error ? (
         <p>{error}</p>
       ) : (
@@ -83,6 +82,7 @@ function AdminDetail() {
               ))}
             </tbody>
           </table>
+          <button onClick={goBack} className='detailB'>뒤로가기</button>
         </div>
       )}
     </div>

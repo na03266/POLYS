@@ -1,40 +1,53 @@
 .LoginDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-  input[type="password"] {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 500px;
-  }
+input[type="password"], button[type="button"] {
+  opacity: 0; /* 초기에 숨겨진 상태 */
+  animation: fadeIn 1s ease forwards; /* 텍스트 페이드 인 애니메이션 */
+}
 
-  
-  button[type="button"] {
-    width: 50%;
-    background-color: #000000;
-    color: #fff;
-    padding: 20px 20px;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 24px;
-    margin-bottom: 500px;
-    
-  }
-  
-  /* Style for the login button on hover */
-  button:hover {
-    background-color: #000000;
-  }
+input[type="password"] {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 500px;
+}
 
-  .Loginh {
-    font-size: 100px;
-    margin-bottom: 200px;
+button[type="button"] {
+  width: 50%;
+  background-color: #000000;
+  color: #fff;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 24px;
+  margin-bottom: 500px;
+}
+
+/* Style for the login button on hover */
+button:hover {
+  background-color: #000000;
+}
+
+.Loginh {
+  font-size: 100px;
+  margin-bottom: 200px;
+  opacity: 0; /* 초기에 숨겨진 상태 */
+  animation: fadeIn 1s ease forwards; /* 텍스트 페이드 인 애니메이션 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}

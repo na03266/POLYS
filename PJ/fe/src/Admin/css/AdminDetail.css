@@ -46,16 +46,17 @@
   
   /* 버튼 스타일 */
   .detailB {
-    margin-top: 5%;
-    margin-left: 25%;
     background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    width: 50%;
-    height: 50px;
+    width: 40%;
+    height: 70px;
+    font-size: 20px;
+    margin-left: 300px;
+    margin-top: 20px;
   }
   
   button:hover {

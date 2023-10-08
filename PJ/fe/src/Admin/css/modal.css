@@ -1,17 +1,33 @@
+/* 모달에 위에서 아래로 내려오는 애니메이션 및 지연 추가 */
 .modal {
-    display: none; 
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #dedede;
-    z-index: 1000; /* 다른 요소 위에 보이도록 설정 */
-    padding: 20px;
-    
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(45, 42, 46, 0.5);
+  display: none;
+  position: fixed;
+  top: -100%; /* 초기에 화면 위쪽으로 숨겨진 상태 */
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #dedede;
+  z-index: 1000; /* 다른 요소 위에 보이도록 설정 */
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(45, 42, 46, 0.5);
+  animation: slideInModal 1s ease forwards; /* 위에서 아래로 내려오는 애니메이션 */
+}
+
+/* 모달 열린 상태에만 보이도록 설정 */
+.modal.open {
+  display: block;
+}
+
+/* 모달 위에서 아래로 내려오는 애니메이션 정의 */
+@keyframes slideInModal {
+  from {
+    top: 49%; /* 시작 위치: 화면 위쪽 */
   }
+  to {
+    top: 50%; /* 최종 위치: 화면 중앙으로 내려옴 */
+  }
+}
 
 .modalB {
   background-color: #c6c6c6;
@@ -30,22 +46,38 @@
     display: block;
   }
   
-  .logoutbutton{
-    background-color: #000000;
-    color: #d1d1d1;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 90px;
-    margin: 10px;
-    cursor: pointer;
-    width: 80%;
-    display: block; /* 블록 요소로 설정하여 가로 정렬 가능하도록 함 */
-    margin: 0 auto; 
-    margin-top: 370px;
-    height:100px; 
-    font-size: 30px;  
-  }
+/* 로그아웃 버튼에 위에서 아래로 내려오는 애니메이션 및 지연 추가 */
+.logoutbutton {
+  background-color: #000000;
+  color: #d1d1d1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 90px;
+  margin: 10px;
+  cursor: pointer;
+  width: 80%;
+  display: block; /* 블록 요소로 설정하여 가로 정렬 가능하도록 함 */
+  margin: 0 auto; 
+  margin-top: -100px; /* 초기에 화면 위쪽으로 숨겨진 상태 */
+  height: 100px; 
+  font-size: 30px;  
+  opacity: 0; /* 초기에 숨겨진 상태 */
+  animation: slideIn 0.5s ease forwards 1.5s; /* 위에서 아래로 내려오는 애니메이션 및 2초 지연 추가 */
+}
 
-  .logoutbutton:hover {
-    background-color: #9b3434; /* 원하는 빨간색으로 변경하세요 */
+/* 호버 애니메이션 */
+.logoutbutton:hover {
+  background-color: rgb(113, 86, 86); 
+}
+
+/* 위에서 아래로 내려오는 애니메이션 정의 */
+@keyframes slideIn {
+  from {
+    margin-top: 360px; /* 시작 위치: 화면 위쪽 */
+    opacity: 0;
   }
+  to {
+    margin-top: 370px; /* 최종 위치: 원하는 위치로 내려옴 */
+    opacity: 1;
+  }
+}
