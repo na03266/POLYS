@@ -23,7 +23,7 @@ function ThreeBox() {
   const [showMainThree, setShowMainThree] = useState(false);
   const [showMainThree2, setShowMainThree2] = useState(false);
   const [showMainThree3, setShowMainThree3] = useState(false);
-  const [showMainThree4, setShowMainThree4] = useState(false);
+  const [showMainThree4, setShowMainThree4] = useState(false); 
   const [showMainThree5, setShowMainThree5] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function ThreeBox() {
 
   const getAttend = async () => {
     try {
-      const response = await axios.get('http://192.168.10.157:3003/api/todayAttend');
+      const response = await axios.get('http://192.168.100.64:3003/api/todayAttend');
 
       if (response.status === 200) {
         const data = response.data.attendances;
@@ -43,6 +43,7 @@ function ThreeBox() {
         setShowMainThree3(data.some(item => item.studentName === "나황제"));
         setShowMainThree4(data.some(item => item.studentName === "안진희"));
         setShowMainThree5(data.some(item => item.studentName === "전수빈"));
+        console.log(data);
       } else {
         const errorData = response.data;
         setgetAttenderror(errorData.message || '가져오기 실패');
