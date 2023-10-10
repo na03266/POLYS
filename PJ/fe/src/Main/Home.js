@@ -25,7 +25,9 @@ function Home() {
     <div>
       <Clock />
       <div className="three-container">
-        <ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
+        <div className='modalbox'>
+          <ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
+        </div>
       </div>
       <div style={{ textAlign: 'center' }}>
         <button className="attendance-bt" style={{ background: 'none' }} onClick={goConfirm}>
@@ -40,7 +42,7 @@ function Home() {
           밥묵자<PiBowlFoodFill />
         </p>
         <FaChalkboardTeacher
-          style={{ fontSize: '75px', textAlign: 'right' }}
+          style={{ fontSize: '85px', textAlign: 'right' }}
           onClick={goAdmin}
         />
       </div>
