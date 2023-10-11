@@ -7,6 +7,7 @@ import Clock from './Clock';
 import FoodModal from './foodmodal';
 import './css/Home.css';
 
+
 function Home() {
   const goAdmin = () => {
     window.location.href = '/admin';

@@ -32,6 +32,8 @@ const FoodModal = ({ onClose }) => {
     onClose();
   };
 
+  
+
   return (
     <div className={`food-modal ${isModalOpen ? 'open' : 'closed'}`}>
       <div className="modal-content">

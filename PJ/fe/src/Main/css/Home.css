@@ -13,7 +13,8 @@
     font-Size: 100px;
     font-Weight: bold;
     display: inline-block;
-    margin-Bottom: 100px;
+    margin-Bottom: 10px;
+    font-family: 'peci';
 
 }
 .attendance-bt:hover {
@@ -23,4 +24,25 @@
     /* 호버 시 테두리 추가 */
     color: rgb(42, 162, 221); 
     /* 호버 시 글자색 변경 */
-  }
+}
+
+body{
+    /* font-family: 'dnf'; */
+    font-family: 'peci';
+}
+
+ @font-face {
+    font-family: 'dnf';
+    src: url('../../fonts/DNFBitBitTTF.ttf');
+ }
+
+ @font-face {
+    font-family: 'yaya';
+    src: url('../../fonts/yaya_ttf.ttf');
+ }
+
+ @font-face {
+    font-family: 'peci';
+    src: url('../../fonts/Recipekorea\ 레코체\ FONT.ttf');
+ }
+ 
