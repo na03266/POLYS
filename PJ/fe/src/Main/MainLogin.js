@@ -10,7 +10,7 @@ function MainLogin() {
   
     const handleLogin = async () => {
       try { 
-        const response = await axios.post('http://localhost:3003/api/login', {
+        const response = await axios.post('http://192.168.10.145:3003/api/login', {
             studentNumber, studentAuthentication1,
         });        
   
@@ -29,7 +29,7 @@ function MainLogin() {
             // 출석 정보를 서버로 POST 요청 보내기
             const formattedAttendanceTime = currentTime.toISOString().slice(0, 19).replace('T', ' ');
             const studentID = localStorage.getItem('studentID');
-            await axios.post('http://localhost:3003/api/loginAttend', {
+            await axios.post('http://192.168.10.145:3003/api/loginAttend', {
               attendanceTime: formattedAttendanceTime,
               studentID,
               attendanceBoolean: attendanceStatus,
