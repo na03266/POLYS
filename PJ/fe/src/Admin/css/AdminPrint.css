@@ -1,0 +1,63 @@
+.print_bt {
+    position: fixed;  /* 고정된 위치를 설정 */
+    bottom: 50px;     /* 하단에서 10px 떨어진 위치에 아이콘 배치 */
+    right: 50px;      /* 우측에서 10px 떨어진 위치에 아이콘 배치 */
+    cursor: pointer;  /* 아이콘 위로 마우스가 올라갔을 때 포인터 모양으로 변경 */
+  }
+
+.modal_print {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 10px;
+
+  /* Flexbox를 이용한 중앙 정렬 */
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 아이템을 나열 */
+  align-items: center; /* 중앙 정렬 */
+  justify-content: center; /* 세로 방향 중앙 정렬 */
+}
+
+.modal_print p {
+  margin: 0 0 20px 0; /* 아래 여백 추가 */
+  padding: 0;
+  font-size: 16px;
+  text-align: center; /* 텍스트도 가운데 정렬 */
+  width: 100%; /* 전체 폭을 차지하도록 설정 */
+  margin-bottom: 20px; /* 텍스트와 버튼 그룹 사이의 여백 */
+}
+
+/* 버튼 그룹을 위한 스타일 */
+.modal_print .button-group {
+  display: flex;
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+}
+
+.modal_print .button-group button {
+  margin: 0 10px; /* 버튼 사이의 간격을 설정 */
+}
+
+.print_y,
+.print_n {
+  margin: 5px; /* 버튼 간의 여백 */
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.print_y {
+  background-color: #4CAF50;
+}
+.print_n {
+  background-color: #f44336;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './css/AdminRecord.css';
+import AdminPrint from './AdminPrint';
 
 
 function AdminLastRecord() {
@@ -78,6 +79,7 @@ function AdminLastRecord() {
         </table>
       <button onClick={getAttend} className='joeB'>조회하기</button>
       <button onClick={goBack} className='backB'>뒤로가기</button>
+      <AdminPrint/>
       </div>
     </div>
   );
