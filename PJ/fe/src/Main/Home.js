@@ -26,7 +26,7 @@ function Home() {
     <div>
       <Clock />
       <div className="three-container">
-        <div className='modalbox'>
+        <div className='modalbox' style={{display:'flex', justifyContent:'center'}}>
           <ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
         </div>
       </div>
