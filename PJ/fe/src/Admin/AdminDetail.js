@@ -12,7 +12,7 @@ function AdminDetail() {
 
   useEffect(() => {
     // 학생 정보를 가져오는 요청
-    axios.get('http://192.168.100.64:3003/api/studentList')
+    axios.get('http://192.168.10.145:3003/api/studentList')
       .then((response) => {
         const data = response.data.students;
         const filteredStudent = data.find((student) => student.studentID === parseInt(studentID));
@@ -24,7 +24,7 @@ function AdminDetail() {
       });
 
     // 출석 정보를 가져오는 요청
-    axios.get('http://192.168.100.64:3003/api/getAttend')
+    axios.get('http://192.168.10.145:3003/api/getAttend')
       .then((response) => {
         const data = response.data.attendances;
         const filteredAttendance = data.filter((item) => item.studentID === parseInt(studentID));

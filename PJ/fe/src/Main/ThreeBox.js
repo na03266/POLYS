@@ -32,7 +32,7 @@ function ThreeBox() {
 
   const getAttend = async () => {
     try {
-      const response = await axios.get('http://192.168.100.64:3003/api/todayAttend');
+      const response = await axios.get('http://192.168.10.145:3003/api/todayAttend');
 
       if (response.status === 200) {
         const data = response.data.attendances;
