@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './css/AdminRecord.css';
 import AdminPrint from './AdminPrint';
@@ -56,9 +56,10 @@ function AdminLastRecord() {
     return itemDate === today;
   });
 
+  const printRef = useRef(null);
+  
   return (
-    <div>
-      
+    <div ref={printRef}>
       <h1 className='chul'>{formatTime(today)} 출석현황</h1>
       <div id="table-container">
         <table>
@@ -79,7 +80,7 @@ function AdminLastRecord() {
         </table>
       <button onClick={getAttend} className='joeB'>조회하기</button>
       <button onClick={goBack} className='backB'>뒤로가기</button>
-      <AdminPrint/>
+      <AdminPrint printRef={printRef} />
       </div>
     </div>
   );

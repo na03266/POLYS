@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import AdminPrint from './AdminPrint';
 
 function AdminLastRecord() {
   const [getAttenderror, setgetAttenderror] = useState(null);
@@ -41,13 +42,14 @@ function AdminLastRecord() {
     }
   };
 
-
   const goBack = () => {
     window.location.href = '/adminMenu';
   };
 
+  const printRef = useRef(null);
+
   return (
-    <div>
+    <div ref={printRef}>
       <h1 className='chul'>지난기록</h1>
       <div id="table-container" className='LRtc'>
         <table className='LRtab'>
@@ -70,6 +72,7 @@ function AdminLastRecord() {
         </table>
       <button className='joeB' onClick={getAttend}>조회하기</button>
       <button className='backB' onClick={goBack}>뒤로가기</button>
+      <AdminPrint printRef={printRef} />
       </div>
     </div>
   );

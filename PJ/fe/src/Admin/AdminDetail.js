@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './css/AdminDetail.css';
+import AdminPrint from './AdminPrint';
+
 
 
 function AdminDetail() {
@@ -49,12 +51,14 @@ function AdminDetail() {
     window.location.href='/adminUserInfo';
   };
 
+  const printRef = useRef(null);
+
   return (
     <div>
       {error ? (
         <p>{error}</p>
       ) : (
-        <div>
+        <div ref={printRef}>
           <h1 className='detailstuh'>학생 상세 정보</h1>
           <h2 className='detailname'>{studentInfo.studentName}</h2>
           <p className='detailpp'>학번: {studentInfo.studentNumber}</p>
@@ -83,7 +87,8 @@ function AdminDetail() {
             </tbody>
           </table>
           <button onClick={goBack} className='detailB'>뒤로가기</button>
-        </div>
+          <AdminPrint printRef={printRef} />
+        </div>        
       )}
     </div>
   );

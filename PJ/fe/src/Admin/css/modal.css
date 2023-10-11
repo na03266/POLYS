@@ -81,3 +81,12 @@
     opacity: 1;
   }
 }
+
+@media print {
+  .joeB,
+  .backB,
+  .print_bt,
+  .modal_print {
+    display: none !important;
+  }
+}
