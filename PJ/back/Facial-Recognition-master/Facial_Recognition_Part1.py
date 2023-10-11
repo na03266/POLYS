@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+# 얼굴 인식을 위한 haar Cascade 분류기 로드
 face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
