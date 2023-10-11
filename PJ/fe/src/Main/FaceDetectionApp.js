@@ -111,7 +111,7 @@ function FaceDetectionApp() {
       }
 
       // 서버에 학번을 전달하여 로그인 요청
-      const response = await axios.post('http://192.168.10.157:3003/api/login', {
+      const response = await axios.post('http://192.168.100.64:3003/api/login', {
         studentID: studentID,
       });
       console.log(studentID);
@@ -135,7 +135,7 @@ function FaceDetectionApp() {
         const formattedTime = localTime.toISOString().slice(0, 19).replace('T', ' ');
         console.log(formattedTime);
          
-        await axios.post('http://192.168.10.157:3003/api/loginAttend', {
+        await axios.post('http://192.168.100.64:3003/api/loginAttend', {
           attendanceTime: formattedTime,
           studentID,
           attendanceBoolean: attendanceStatus,
