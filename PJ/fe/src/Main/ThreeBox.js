@@ -6,13 +6,15 @@ import axios from 'axios';
 function ThreeBox() {
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)', // 3 columns
+    gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
     gridGap: '10px', // Gap between items
   };
 
   const itemStyle = {
     flex: '1', // Take up equal space within the grid cell
     margin: '5px', // Item margin
+    textAlign:'center',
+    
   };
 
   const [getAttenderror, setgetAttenderror] = useState(null);
@@ -43,9 +45,9 @@ function ThreeBox() {
     <div style={containerStyle}>
       {jsonData.map((item, index) => (
         <div key={index} style={itemStyle}>
+          <div style={{fontSize:'25px'}}>{item.studentName}</div>
           {item.studentGentder === 0 && <MainThree />}
           {item.studentGentder === 1 && <Mainthree2 />}
-          {/* Add conditions for other values as needed */}
         </div>
       ))}
     </div>

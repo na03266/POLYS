@@ -9,7 +9,7 @@ class ThreeScene extends Component {
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setSize(300, 450);
+    this.renderer.setSize(250, 400);
     this.renderer.setClearColor(0xffffff);
 
     this.camera.position.z = 5;
@@ -36,7 +36,7 @@ class ThreeScene extends Component {
     const loader = new GLTFLoader();
 
     loader.load(
-      "/blender/gwangsick.gltf",
+      "/blender/girl.gltf",
       (gltf) => {
         this.model = gltf.scene;
 

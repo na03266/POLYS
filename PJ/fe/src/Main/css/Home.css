@@ -4,7 +4,6 @@
     background-color: aqua;
     margin: auto;
     margin-bottom: 100px;
-    
 }
 
 
@@ -16,6 +15,7 @@
     display: inline-block;
     margin-Bottom: 10px;
     font-family: 'peci';
+    margin-bottom: 12rem;
 
 }
 .attendance-bt:hover {

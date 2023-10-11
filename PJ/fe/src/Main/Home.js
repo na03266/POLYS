@@ -43,7 +43,7 @@ function Home() {
           밥묵자<PiBowlFoodFill />
         </p>
         <FaChalkboardTeacher
-          style={{ fontSize: '85px', textAlign: 'right' }}
+          style={{ fontSize: '85px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
       </div>

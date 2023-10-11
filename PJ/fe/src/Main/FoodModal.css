@@ -14,7 +14,7 @@
   transition: opacity 0.3s ease-in-out; /* 페이드 인/아웃 효과를 줍니다. */
   text-align: center; /* 텍스트 가운데 정렬 */
   width: 70%;
-  height: 83%;
+  height: 55%;
   padding: 20px;
   
 }
@@ -36,7 +36,8 @@ th {
 }
 
 .modal-content{
-  margin-top: 5%;
+  margin-top: 10%;
+  font-size: 17px;
   
 }
 
