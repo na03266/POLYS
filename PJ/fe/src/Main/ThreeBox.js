@@ -1,30 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import MainThree from './Mainthree';
 import Mainthree2 from './Mainthree2';
-import Mainthree3 from './Mainthree3';
-import Mainthree4 from './Mainthree4';
-import Mainthree5 from './Mainthree5';
 import axios from 'axios';
 
 function ThreeBox() {
   const containerStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
-    gridGap: '10px', // Gap between items
+    gridTemplateColumns: 'repeat(3, 1fr)', // 3개의 열
+    gridGap: '10px', // 아이템 사이의 간격
+    gridRowGap: '5px',
   };
 
   const itemStyle = {
-    flex: '1', // Take up equal space within the grid cell
-    margin: '5px', // Item margin
+    margin: '5px', // 아이템 간격
+    textAlign: 'center',
+    border: '1px solid #ccc', // 시각적으로 나타내기 위해 테두리 추가
+    padding: '10px', // 시각적으로 보기 좋게 패딩 추가
   };
 
   const [getAttenderror, setgetAttenderror] = useState(null);
   const [jsonData, setJsonData] = useState([]);
-  const [showMainThree, setShowMainThree] = useState(false);
-  const [showMainThree2, setShowMainThree2] = useState(false);
-  const [showMainThree3, setShowMainThree3] = useState(false);
-  const [showMainThree4, setShowMainThree4] = useState(false);
-  const [showMainThree5, setShowMainThree5] = useState(false);
 
   useEffect(() => {
     getAttend();
@@ -32,17 +27,11 @@ function ThreeBox() {
 
   const getAttend = async () => {
     try {
-      const response = await axios.get('http://192.168.100.64:3003/api/todayAttend');
+      const response = await axios.get('http://192.168.10.145:3003/api/todayAttend');
 
       if (response.status === 200) {
-        const data = response.data.attendances;
+        const data = response.data.attendances.filter(item => item.attendanceBoolean !== 2); // 필터링
         setJsonData(data);
-
-        setShowMainThree(data.some(item => item.studentName === "이광식"));
-        setShowMainThree2(data.some(item => item.studentName === "백민진"));
-        setShowMainThree3(data.some(item => item.studentName === "나황제"));
-        setShowMainThree4(data.some(item => item.studentName === "안진희"));
-        setShowMainThree5(data.some(item => item.studentName === "전수빈"));
       } else {
         const errorData = response.data;
         setgetAttenderror(errorData.message || '가져오기 실패');
@@ -55,21 +44,13 @@ function ThreeBox() {
 
   return (
     <div style={containerStyle}>
-      <div style={itemStyle}>
-        {showMainThree && <MainThree />}
-      </div>
-      <div style={itemStyle}>
-        {showMainThree2 && <Mainthree2 />}
-      </div>
-      <div style={itemStyle}>
-        {showMainThree3 && <Mainthree3 />} 
-      </div>
-      <div style={itemStyle}>
-        {showMainThree4 && <Mainthree4 />} 
-      </div>
-      <div style={itemStyle}>
-        {showMainThree5 && <Mainthree5 />}
-      </div>
+      {jsonData.map((item, index) => (
+        <div key={index} style={itemStyle}>
+          {item.studentGentder === 0 && <MainThree />}
+          {item.studentGentder === 1 && <Mainthree2 />}
+          <div style={{ fontSize: '25px' }}>{item.studentName}</div>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import ThreeBox from './ThreeBox';
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import { PiBowlFoodFill } from 'react-icons/pi';
+import { GiBowlOfRice } from 'react-icons/gi';
 import { MdTouchApp } from 'react-icons/md';
 import Clock from './Clock';
 import FoodModal from './foodmodal';
 import './css/Home.css';
+
 
 function Home() {
   const goAdmin = () => {
@@ -25,7 +26,9 @@ function Home() {
     <div>
       <Clock />
       <div className="three-container">
-        <ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
+        <div className='modalbox' style={{display:'flex', justifyContent:'center'}}>
+          <ThreeBox /> {/* MainThree 컴포넌트를 원하는 div 내에 렌더링 */}
+        </div>
       </div>
       <div style={{ textAlign: 'center' }}>
         <button className="attendance-bt" style={{ background: 'none' }} onClick={goConfirm}>
@@ -34,13 +37,15 @@ function Home() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p
+          className="food"
           onClick={toggleModal}
           style={{ fontSize: '75px', margin: '0 20px', textAlign: 'left' }}
         >
-          밥묵자<PiBowlFoodFill />
+          밥묵자<GiBowlOfRice style={{fontSize:'85px'}} />
         </p>
         <FaChalkboardTeacher
-          style={{ fontSize: '75px', textAlign: 'right' }}
+          className="admin"
+          style={{ fontSize: '100px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
       </div>

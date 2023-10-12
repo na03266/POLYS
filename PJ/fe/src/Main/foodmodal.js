@@ -9,7 +9,7 @@ const FoodModal = ({ onClose }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://192.168.100.64:3003/api/todayMenu');
+        const response = await axios.get('http://192.168.10.145:3003/api/todayMenu');
         const data = response.data.menu;
 
         // 토요일과 일요일 데이터를 필터링
@@ -31,6 +31,8 @@ const FoodModal = ({ onClose }) => {
     setIsModalOpen(false);
     onClose();
   };
+
+  
 
   return (
     <div className={`food-modal ${isModalOpen ? 'open' : 'closed'}`}>

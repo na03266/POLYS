@@ -1,0 +1,23 @@
+.dateStyle{
+    color:rgb(47, 52, 45);
+    font-size: 160px; 
+    margin-top: 8rem;
+    text-shadow: 0 0 15px rgb(80, 54, 126), 0 0 50px rgb(215, 195, 252),  0 8px rgba(175, 165, 196, 0.62);
+    margin-bottom: 2rem;
+    font-family: 'clockfont';
+}
+
+.timeStyle{
+    color:rgb(47, 52, 45);
+    font-size: 150px; 
+    /* font-weight: bold;  */
+    margin-bottom: 5rem;
+    text-shadow: 0 0 15px rgb(80, 54, 126), 0 0 50px rgb(215, 195, 252),  0 8px rgba(175, 165, 196, 0.62);
+    font-family: 'clockfont';
+}
+
+
+@font-face {
+    font-family: "clockfont";
+    src: url("../../fonts/DS-DIGIT.TTF");
+}

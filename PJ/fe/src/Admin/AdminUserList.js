@@ -7,10 +7,10 @@ function AdminUserList() {
 
   useEffect(() => {
     // 서버로부터 학생 목록을 가져오는 요청
-    axios.get('http://192.168.100.64:3003/api/studentList')
+    axios.get('http://192.168.10.145:3003/api/studentList')
     .then((response) => {
         // 서버에서 학생 목록을 받아온 경우
-        setStudents(response.data.students); // "students" 키를 참조하여 데이터를 가져옵니다.
+        setStudents(response.data.students); // "students" 키를 참조하여 데이터를 가져옵니다. 
     })
     .catch((error) => {
         console.error('학생 목록을 불러오는 데 실패했습니다.', error);

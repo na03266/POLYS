@@ -10,7 +10,7 @@ function Regist() {
 
     const handleRegist= async () => {
         try {
-          const response = await axios.post('http://localhost:3003/api/regist', 
+          const response = await axios.post('http://192.168.10.145:3003/api/regist', 
           { studentName, studentNumber, studentAuthentication1, studentAuthentication2 });
           console.log({ studentNumber, studentName, studentAuthentication1, studentAuthentication2 });
 
