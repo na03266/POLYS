@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import './css/Clock.css';
 
 function App() {
   const [currentHourMinute, setCurrentHourMinute] = useState(getHourMinute());
+  const [currentDate, setCurrentDate] = useState(getFormattedDate());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHourMinute(getHourMinute());
+      setCurrentDate(getFormattedDate());
     }, 60000); // 1분마다 업데이트
 
     return () => {
@@ -18,7 +21,16 @@ function App() {
     const currentTime = new Date();
     const hours = currentTime.getHours();
     const minutes = currentTime.getMinutes();
-    return `${hours < 10 ? '0' : ''}${hours}시 ${minutes < 10 ? '0' : ''}${minutes}분`;
+    return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+  }
+
+  // 현재 날짜를 형식화하는 함수
+  function getFormattedDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더하고 2자리로 패딩
+    const day = currentDate.getDate().toString().padStart(2, '0'); // 날짜를 2자리로 패딩
+    return `${year}-${month}-${day}`;
   }
 
   const clock = {
@@ -28,25 +40,13 @@ function App() {
     justifyContent: 'center',
     // height: '100vh', // 화면 높이의 100%를 사용하여 화면 가운데에 정렬
   };
-  
-
-  // 시간 표시 부분의 글꼴 크기 스타일
-  const timeStyle = {
-    fontSize: '100px', // 원하는 크기로 조절하세요
-    fontWeight: 'bold', // 원하는 폰트 두께로 조절하세요
-    margin:'200px',
-    color:'rgb(255, 50, 0)',
-    
-  };
 
   return (
     <div>
-    
-    
-    <div style={clock}>
-      {/* <p style={{fontSize:'50px'}}>현재시간</p> */}
-      <p style={timeStyle}>{currentHourMinute}</p>
-    </div>
+      <div style={clock}>
+        <span className='dateStyle'>{currentDate}</span>
+        <span className='timeStyle'>{currentHourMinute}</span>
+      </div>
     </div>
   );
 }

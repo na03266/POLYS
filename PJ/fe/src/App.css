@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/* *{
+  font-family: 'gangwondo';
+}
+
+@font-face {
+  font-family: "gangwondo";
+  src: url("../src/fonts/gangwondo.ttf");
+} */
