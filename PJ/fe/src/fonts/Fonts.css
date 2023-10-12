@@ -1,5 +1,10 @@
 @font-face {
     font-family: "gangwondo";
     font-style: normal;
-    src: url("../fonts/gangwondo.ttf") format("truetype");
-  }
+    src: url("../fonts/gangwondo.ttf");
+}
+
+@font-face {
+  font-family: "clockfont";
+  src: url("../fonts/DS-DIGIT.TTF");
+}

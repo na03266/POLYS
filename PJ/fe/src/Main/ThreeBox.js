@@ -46,9 +46,9 @@ function ThreeBox() {
     <div style={containerStyle}>
       {jsonData.map((item, index) => (
         <div key={index} style={itemStyle}>
-          <div style={{fontSize:'25px'}}>{item.studentName}</div>
           {item.studentGentder === 0 && <MainThree />}
           {item.studentGentder === 1 && <Mainthree2 />}
+          <div style={{fontSize:'25px'}}>{item.studentName}</div>
         </div>
       ))}
     </div>
