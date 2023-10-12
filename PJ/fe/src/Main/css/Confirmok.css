@@ -1,0 +1,22 @@
+/* You can place this CSS in a separate .css file and import it in your React component, or you can use inline styles in your component. */
+
+.oktext {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .nimhi {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .okcountdown {
+    font-size: 18px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add more styles as needed based on your design requirements. */
+  

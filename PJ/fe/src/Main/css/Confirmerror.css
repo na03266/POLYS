@@ -1,0 +1,44 @@
+/* You can place this CSS in a separate .css file and import it in your React component, or you can use inline styles in your component. */
+
+.CEinsickno {
+    display: flex; /* 요소를 flex container로 설정합니다. */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 수직 가운데 정렬을 위해 추가합니다. */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: auto;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  
+  .noinsick {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  .confirmBusignin {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirmBusignin:hover {
+    background-color: #0056b3;
+  }
+  
+  .errorcountdown {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* You can customize these styles further based on your design preferences. */
+  

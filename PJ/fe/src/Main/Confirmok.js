@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './css/Confirmok.css'
 
 function Confirmok() {
   const [countdown, setCountdown] = useState(5);
@@ -40,11 +41,11 @@ function Confirmok() {
   };
 
   return (
-    <div>
-      <h1>
+    <div className='oktext'>
+      <h1 className='nimhi'>
         {studentName}님 ㅎㅇ요 <br></br>출석시간 {formatTime(currentTime)}
       </h1>
-      <h3>
+      <h3 className='okcountdown'>
         {countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}        
       </h3>
     </div>

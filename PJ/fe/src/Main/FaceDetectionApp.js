@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as tmImage from '@teachablemachine/image';
 import axios from 'axios';
+import './css/FaceDetectionApp.css'
 
 const modelURL = '/models/';
 
@@ -158,9 +159,9 @@ function FaceDetectionApp() {
 
   return (
     <div className="App">
-      <h1>Face Detection App</h1>
-      <p>Detected Faces:</p>
-      <ul>
+      <h1 className='FDA'>Face Detection App</h1>
+      <p className='DF'>Detected Faces:</p>
+      <ul className='FDAul'>
         {labels.map((item, index) => (
           <li key={index}>
             {item.label}: {item.probability}%
@@ -168,10 +169,10 @@ function FaceDetectionApp() {
         ))}
       </ul>
       {confirmedLabel && (
-        <div>
-          <p>Confirmed Label: {confirmedLabel}</p>
+        <div className='FDAl'>
+          <p className='FDACL'>Confirmed Label: {confirmedLabel}</p>
           {showModal && (
-            <div className="modal">
+            <div className="FDConfirmmodal">
               <p>{confirmedLabel}님이 맞으십니까?</p>
               <button onClick={handleYesClick}>예</button>
               <button onClick={handleNoClick}>아니오</button>
