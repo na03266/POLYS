@@ -8,6 +8,7 @@ function ThreeBox() {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
     gridGap: '10px', // Gap between items
+    gridRowGap:'5px',
   };
 
   const itemStyle = {

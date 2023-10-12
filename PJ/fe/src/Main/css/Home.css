@@ -1,9 +1,9 @@
 .modalbox{
     width: 85%;
-    height: 1200px;
-    background-color: aqua;
+    height: 800px;
+    /* background-color: aqua; */
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 250px;
 }
 
 

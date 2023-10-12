@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ThreeBox from './ThreeBox';
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import { PiBowlFoodFill } from 'react-icons/pi';
+import { GiBowlOfRice } from 'react-icons/gi';
 import { MdTouchApp } from 'react-icons/md';
 import Clock from './Clock';
 import FoodModal from './foodmodal';
@@ -40,10 +40,10 @@ function Home() {
           onClick={toggleModal}
           style={{ fontSize: '75px', margin: '0 20px', textAlign: 'left' }}
         >
-          밥묵자<PiBowlFoodFill />
+          밥묵자<GiBowlOfRice style={{fontSize:'85px'}} />
         </p>
         <FaChalkboardTeacher
-          style={{ fontSize: '85px', textAlign: 'right',marginRight: '35px' }}
+          style={{ fontSize: '100px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
       </div>
