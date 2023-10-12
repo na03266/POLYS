@@ -1,18 +1,18 @@
 .dateStyle{
-    color:white;
-    font-size: 140px; 
-    margin-top: 15rem;
-    text-shadow: 0 0 20px rgb(118, 217, 235), 0 0 200px rgb(118, 217, 235), 0 0 120px rgb(118, 217, 235);
+    color:rgb(47, 52, 45);
+    font-size: 160px; 
+    margin-top: 8rem;
+    text-shadow: 0 0 15px rgb(80, 54, 126), 0 0 50px rgb(215, 195, 252),  0 8px rgba(175, 165, 196, 0.62);
     margin-bottom: 2rem;
     font-family: 'clockfont';
 }
 
 .timeStyle{
-    color:white;
-    font-size: 130px; 
+    color:rgb(47, 52, 45);
+    font-size: 150px; 
     /* font-weight: bold;  */
-    margin-bottom: 7rem;
-    text-shadow: 0 0 20px rgb(132, 237, 114), 0 0 200px rgb(132, 237, 114), 0 0 120px rgb(132, 237, 114);
+    margin-bottom: 5rem;
+    text-shadow: 0 0 15px rgb(80, 54, 126), 0 0 50px rgb(215, 195, 252),  0 8px rgba(175, 165, 196, 0.62);
     font-family: 'clockfont';
 }
 

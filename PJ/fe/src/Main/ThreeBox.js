@@ -8,14 +8,13 @@ function ThreeBox() {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
     gridGap: '10px', // Gap between items
-    gridRowGap:'5px',
+    gridRowGap: '5px',
   };
 
   const itemStyle = {
     flex: '1', // Take up equal space within the grid cell
     margin: '5px', // Item margin
-    textAlign:'center',
-    
+    textAlign: 'center',
   };
 
   const [getAttenderror, setgetAttenderror] = useState(null);
@@ -46,9 +45,13 @@ function ThreeBox() {
     <div style={containerStyle}>
       {jsonData.map((item, index) => (
         <div key={index} style={itemStyle}>
-          {item.studentGentder === 0 && <MainThree />}
-          {item.studentGentder === 1 && <Mainthree2 />}
-          <div style={{fontSize:'25px'}}>{item.studentName}</div>
+          {item.attendanceBoolean !== 2 && ( // Check if attendanceBoolean is not 2
+            <>
+              {item.studentGentder === 0 && <MainThree />}
+              {item.studentGentder === 1 && <Mainthree2 />}
+              <div style={{ fontSize: '25px' }}>{item.studentName}</div>
+            </>
+          )}
         </div>
       ))}
     </div>
