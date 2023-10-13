@@ -23,6 +23,8 @@ const studentListRouter = require('./routes/studentList');
 app.use('/api/studentList', studentListRouter);
 const todayAttendRouter = require('./routes/todayAttend'); 
 app.use('/api/todayAttend', todayAttendRouter);
+const guestLoginRouter = require('./routes/guestLogin'); 
+app.use('/api/guestLogin', guestLoginRouter);
 
 //식단표 부분
 const todayMenuRouter = require('./routes/todayMenu'); 

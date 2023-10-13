@@ -22,6 +22,10 @@ function Home() {
     setShowModal(!showModal);
   };
 
+  const moveGuest = () => {
+    window.location.href = '/guestLogin';
+  };
+
   return (
     <div>
       <Clock />
@@ -37,15 +41,20 @@ function Home() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p
+          className="food"
           onClick={toggleModal}
           style={{ fontSize: '75px', margin: '0 20px', textAlign: 'left' }}
         >
           밥묵자<GiBowlOfRice style={{fontSize:'85px'}} />
         </p>
         <FaChalkboardTeacher
+          className="admin"
           style={{ fontSize: '100px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
+      </div>
+      <div>
+        <button onClick={moveGuest}>test</button>
       </div>
       {showModal && <FoodModal onClose={toggleModal} />}
     </div>
