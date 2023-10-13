@@ -34,8 +34,8 @@ function GuestLogin() {
   }, [guestID]);
 
   return (
-    <div>
-      <img src='./qr.jpeg' alt="QR Code" />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <img className='qrimg' src='./qr.jpeg' alt="QR Code" style={{ width: '500px', height: '500px' }}/>
     </div>
   );
 }

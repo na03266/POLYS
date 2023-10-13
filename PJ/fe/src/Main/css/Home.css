@@ -13,9 +13,31 @@
     font-Weight: bold;
     display: inline-block;
     font-family: 'peci';
+    margin-bottom: 5%;
+
+}
+
+.guest{
+    background: none;
+    border: none;
+    font-Size: 40px;
+    font-Weight: bold;
+    display: inline-block;
+    font-family: 'peci';
     margin-bottom: 8rem;
 
 }
+
+.gus:hover {
+    /* background-color: #007bff;  */
+    /* 호버 시 배경색 변경 */
+    /* border: 2px solid #007bff;  */
+    /* 호버 시 테두리 추가 */
+    color: rgb(42, 162, 221); 
+    /* 호버 시 글자색 변경 */
+    
+}
+
 .attendance-bt:hover {
     /* background-color: #007bff;  */
     /* 호버 시 배경색 변경 */

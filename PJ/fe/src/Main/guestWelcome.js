@@ -25,7 +25,7 @@ function GuestWelcome() {
     // 5초 후에 루트 주소로 이동하고 guestID 값을 로컬 스토리지에서 삭제
     const timeout = setTimeout(() => {
       localStorage.removeItem('guestID');
-      window.location.href = '/';
+      // window.location.href = '/';
     }, 5000);
 
     // 컴포넌트 언마운트 시 timeout 정리

@@ -38,6 +38,9 @@ function Home() {
         <button className="attendance-bt" style={{ background: 'none' }} onClick={goConfirm}>
           출석하기<MdTouchApp />
         </button>
+        <div>
+        <button className="guest" style={{ background: 'none' }} onClick={moveGuest}>게스트 로그인</button>
+      </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p
@@ -52,9 +55,6 @@ function Home() {
           style={{ fontSize: '100px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
-      </div>
-      <div>
-        <button onClick={moveGuest}>test</button>
       </div>
       {showModal && <FoodModal onClose={toggleModal} />}
     </div>

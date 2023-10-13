@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './css/GuestRegist.css'
 
 function GuestRegist() {
   const [guestName, setGuestName] = useState('');
@@ -42,16 +43,16 @@ function GuestRegist() {
   };
 
   return (
-    <div>
-      <h2>손님 등록 폼</h2>
+    <div className="GRcontainer">
+      <h2 className='GD'>게스트 등록</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>이름:</label>
-          <input type="text" value={guestName} onChange={handleNameChange} />
+          <label className='GestName'>이름</label>
+          <input type="text" className='GuestInput' value={guestName} onChange={handleNameChange} />
         </div>
         <div>
-          <label>방문 목적:</label>
-          <input type="text" value={guestPurpose} onChange={handlePurposeChange} />
+          <label className='visitPurpose'>방문 목적</label>
+          <input type="text" className='GuestInput' value={guestPurpose} onChange={handlePurposeChange} />
         </div>
         <button type="submit">등록</button>
       </form>
