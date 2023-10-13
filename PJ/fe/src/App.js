@@ -14,6 +14,10 @@ import AdminDetail from './Admin/AdminDetail';
 import Confirm from './Main/Confirm';
 import Confirmerror from './Main/Confirmerror';
 import Confirmok from './Main/Confirmok';
+import GuestLogin from './Main/guestLogin';
+import GuestRegist from './Main/guestRegist';
+import GF from './Main/gF';
+import GuestWelcome from './Main/guestWelcome';
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
         <Route path="/confirm" element={<Confirm />} />      
         <Route path="/confirmerror" element={<Confirmerror />} /> 
         <Route path="/confirmok" element={<Confirmok />} />   
+        <Route path="/guestLogin" element={<GuestLogin />} /> 
+        <Route path="/guestRegist" element={<GuestRegist />} /> 
+        <Route path="/gF" element={<GF />} /> 
+        <Route path="/guestWelcome" element={<GuestWelcome />} /> 
       </Routes>
     </Router>
   );

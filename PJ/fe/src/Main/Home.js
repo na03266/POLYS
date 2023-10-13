@@ -22,6 +22,10 @@ function Home() {
     setShowModal(!showModal);
   };
 
+  const moveGuest = () => {
+    window.location.href = '/guestLogin';
+  };
+
   return (
     <div>
       <Clock />
@@ -48,6 +52,9 @@ function Home() {
           style={{ fontSize: '100px', textAlign: 'right',marginRight: '35px' }}
           onClick={goAdmin}
         />
+      </div>
+      <div>
+        <button onClick={moveGuest}>test</button>
       </div>
       {showModal && <FoodModal onClose={toggleModal} />}
     </div>
