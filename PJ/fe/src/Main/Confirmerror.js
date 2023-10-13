@@ -49,7 +49,7 @@ function Confirmerror() {
       <button style={buttonStyle} onClick={goRegist} className="confirmBusignin">
         회원가입
       </button>
-      <h3 className="errorcountdown">
+        <h3 className="errorcountdown">
         {countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}        
       </h3>      
     </div>

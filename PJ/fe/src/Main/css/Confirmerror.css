@@ -6,18 +6,15 @@
     justify-content: center;
     align-items: center; /* 수직 가운데 정렬을 위해 추가합니다. */
     text-align: center;
-    padding: 20px;
     background-color: #ffffff;
     margin: auto;
-    width: 80%;
-    max-width: 400px;
     position: relative;
+    margin-top: 50%;
   }
   
   
   .noinsick {
-    font-size: 24px;
-    margin: 20px 0;
+    font-size: 45px;
   }
   
   .confirmBusignin {
@@ -26,17 +23,17 @@
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 40px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .confirmBusignin:hover {
-    background-color: #0056b3;
+    background-color: #636363;
   }
   
   .errorcountdown {
-    font-size: 18px;
+    font-size: 30px;
     margin-top: 20px;
   }
   

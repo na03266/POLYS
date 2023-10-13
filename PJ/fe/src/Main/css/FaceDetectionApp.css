@@ -1,9 +1,11 @@
-.App {
+.FDApp {
     text-align: center;
+    margin-top: 30%;
   }
   
   .donmove{
     text-align:center;
+    font-size: 50px;
 }
   .FDA {
     font-size: 32px;
@@ -51,6 +53,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
+    margin-top: 50%;
   }
   
   .FDConfirmmodal p {

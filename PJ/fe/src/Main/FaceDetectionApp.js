@@ -160,19 +160,9 @@ function FaceDetectionApp() {
   };
 
   return (
-    <div className="App">
-      <h1 className='FDA'>Face Detection App</h1>
-      <p className='DF'>Detected Faces:</p>
-      <ul className='FDAul'>
-        {labels.map((item, index) => (
-          <li key={index}>
-            {item.label}: {item.probability}%
-          </li>
-        ))}
-      </ul>
+    <div className="FDApp">
       {confirmedLabel && (
         <div className='FDAl'>
-          <p className='FDACL'>Confirmed Label: {confirmedLabel}</p>
           {showModal && (
             <div className="FDConfirmmodal">
               <p>{confirmedLabel}님이 맞으십니까?</p>
@@ -182,7 +172,7 @@ function FaceDetectionApp() {
           )}
         </div>
       )}
-      <video ref={videoRef} autoPlay muted width="500" height="500" />
+      <video ref={videoRef} autoPlay muted width="800" height="800" />
       <style>
         {`
           .modal {

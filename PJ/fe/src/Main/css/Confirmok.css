@@ -2,20 +2,17 @@
 
 .oktext {
     text-align: center;
-    padding: 20px;
+    margin-top: 50%;
   }
   
   .nimhi {
-    font-size: 24px;
+    font-size: 50px;
     margin-bottom: 20px;
   }
   
   .okcountdown {
-    font-size: 18px;
-    background-color: #f5f5f5;
-    padding: 10px;
+    font-size: 30px;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   /* Add more styles as needed based on your design requirements. */
