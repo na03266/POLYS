@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './css/Confirmok.css';
 import { getSpeech } from './getSpeech';
+import Mainthree from './Mainthree';
+import Mainthree2 from './Mainthree2';
 
 function Confirmok() {
   const [value, setValue] = useState("안녕하세요");
@@ -8,6 +10,7 @@ function Confirmok() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const studentName = localStorage.getItem('studentName');
+  const studentGender = localStorage.getItem('studentGender');
 
   useEffect(() => {
     window.speechSynthesis.getVoices();
@@ -40,6 +43,7 @@ function Confirmok() {
     const redirectTimer = setTimeout(() => {
       localStorage.removeItem('studentName');
       localStorage.removeItem('studentID');
+      localStorage.removeItem('studentGender');
       window.location.href = '/';
     }, 5000);
 
@@ -64,7 +68,8 @@ function Confirmok() {
       <h1 className='nimhi'>
         {studentName}님 ㅎㅇ요 <br />출석시간 {formatTime(currentTime)}
       </h1>
-
+      {studentGender === "0" ? <Mainthree /> : <Mainthree2 />}
+      {studentName && <div style={{ fontSize: '25px' }}>{studentName}</div>}
       <h3 className='okcountdown'>
         {countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}
       </h3>
