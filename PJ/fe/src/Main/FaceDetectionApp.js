@@ -124,6 +124,7 @@ function FaceDetectionApp() {
         // 로컬 스토리지에 학생 이름과 학번 저장
         localStorage.setItem('studentName', data.studentName);
         localStorage.setItem('studentID', data.studentID);
+        localStorage.setItem('studentGender', data.studentGender);
 
         // 현재 시간을 기준으로 출석 여부 판단
         const isBeforeNineAM = currentTime.getHours() < 9;
