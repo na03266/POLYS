@@ -1,8 +1,9 @@
 /* AdminDetail.css */
 .detailstuh {
-    font-size: 30px;
-    margin: 20px 0;
-    text-align: center;
+  font-size: 50px;
+  margin: 20px 0;
+  text-align: center; /* 텍스트를 가운데로 정렬합니다. */
+  margin-top: 150px;
   }
   
   .detailname {

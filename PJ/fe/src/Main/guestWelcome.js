@@ -15,12 +15,18 @@ function GuestWelcome() {
         .then((response) => {
           const { guestName, guestPurpose } = response.data;
 
-          setGuestInfo({ guestName, guestPurpose });
+          if (guestName === '하정미') {
+            // guestName이 '하정미'인 경우에만 다른 경로로 이동
+            window.location.href = '/HakJangNim'; // 이동하고자 하는 페이지 경로로 변경
+          } else {
+            setGuestInfo({ guestName, guestPurpose });
+          }
         })
         .catch((error) => {
           console.error('에러 발생:', error);
         });
     }
+
 
     // 5초 후에 루트 주소로 이동하고 guestID 값을 로컬 스토리지에서 삭제
     const timeout = setTimeout(() => {
