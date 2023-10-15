@@ -20,6 +20,7 @@ import GF from './Main/gF';
 import GuestWelcome from './Main/guestWelcome';
 import AdminGuest from './Admin/AdminGuest';
 import HakJangNim from './Main/HakJangNim';
+import QRLogin from './Main/QRLogin';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/guestWelcome" element={<GuestWelcome />} /> 
         <Route path="/AdminGuest" element={<AdminGuest />} /> 
         <Route path='/HakJangNim' element={<HakJangNim/>}/>
+        <Route path='/QRLogin' element={<QRLogin/>}/>
       </Routes>
     </Router>
   );
