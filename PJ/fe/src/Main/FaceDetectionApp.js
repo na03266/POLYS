@@ -103,6 +103,10 @@ function FaceDetectionApp() {
     window.location.href = '/Confirmerror';
   };
 
+  const QRLogin = () => {
+    window.location.href = '/QRLogin';
+  }
+
   const handleLogin = async () => {
     try {
       if (!studentID) {
@@ -169,6 +173,7 @@ function FaceDetectionApp() {
               <p>{confirmedLabel}님이 맞으십니까?</p>
               <button onClick={handleYesClick}>예</button>
               <button onClick={handleNoClick}>아니오</button>
+              <button onClick={QRLogin}>QR코드로 로그인하기</button>
             </div>
           )}
         </div>
