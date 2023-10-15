@@ -19,6 +19,7 @@ import GuestRegist from './Main/guestRegist';
 import GF from './Main/gF';
 import GuestWelcome from './Main/guestWelcome';
 import AdminGuest from './Admin/AdminGuest';
+import HakJangNim from './Main/HakJangNim';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/gF" element={<GF />} /> 
         <Route path="/guestWelcome" element={<GuestWelcome />} /> 
         <Route path="/AdminGuest" element={<AdminGuest />} /> 
+        <Route path='/HakJangNim' element={<HakJangNim/>}/>
       </Routes>
     </Router>
   );
