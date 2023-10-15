@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './css/guestLogin.css'
 
 function GuestLogin() {
   const [guestID, setGuestID] = useState(null);
@@ -34,8 +35,14 @@ function GuestLogin() {
   }, [guestID]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    
+    <div>
+      <div>
+        <h2 className='QRjinhanggo' style={{ textAlign:'center' }}>QR로 비회원 등록을 진행해주세요.</h2>
+      </div>
+    <div className='qrimgcontainer'>
       <img className='qrimg' src='./qr.jpeg' alt="QR Code" style={{ width: '500px', height: '500px' }}/>
+    </div>
     </div>
   );
 }

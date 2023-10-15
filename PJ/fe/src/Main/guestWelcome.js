@@ -25,7 +25,7 @@ function GuestWelcome() {
     // 5초 후에 루트 주소로 이동하고 guestID 값을 로컬 스토리지에서 삭제
     const timeout = setTimeout(() => {
       localStorage.removeItem('guestID');
-      // window.location.href = '/';
+      window.location.href = '/';
     }, 5000);
 
     // 컴포넌트 언마운트 시 timeout 정리
@@ -33,14 +33,23 @@ function GuestWelcome() {
   }, []);
 
   return (
-    <div>
-      {guestInfo ? (
-        <p>{`어서오세요 ${guestInfo.guestName}님! ${guestInfo.guestPurpose} 목적으로 방문하신 것을 진심으로 환영합니다.`}</p>
-      ) : (
-        <p>로딩 중...</p>
-      )}
-    </div>
-  );
+    <div style={{ 
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100rem', // 화면 높이에 따라 조절하십시오.
+      fontSize: '30px'
+    }}>
+    {guestInfo ? (
+      <div style={{ textAlign: 'center' }}>
+        <span style={{ fontSize: '5rem'}}>{`어서오세요 ${guestInfo.guestName}님!`}</span><br></br>
+        <p>{`${guestInfo.guestPurpose} 목적으로 방문하신 것을 진심으로 환영합니다.`}</p>
+      </div>
+    ) : (
+      <p>로딩 중...</p>
+    )}
+  </div>
+);
 }
 
 export default GuestWelcome;
