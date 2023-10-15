@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FrontSide } from 'three';
+import './css/QRLogin.css';
 
 function QRLogin() {
   const [studentName, setStudentName] = useState("");
@@ -87,19 +89,30 @@ function QRLogin() {
     }
   }, [studentName]);
 
-  const gohome = window.location.href='/';
+  const goHome = () =>{
+    window.location.href = '/';
+  };
+ 
 
   return (
     <div>
-      <div>QR로 로그인</div>
-      <input
-        type="text"        
-        value={studentName}
-        onChange={(e) => setStudentName(e.target.value)}
-        autoFocus
-        style={{width:'0.1px', height:'0.1px'}}
-      />
-      <button onClick={gohome}>로그인 못하겠어요!</button>
+      <div className='qrcontainer'>
+        <div className='qrlogingcontainer'>
+          <h2 className='qrloging'>QR로 로그인</h2>
+          <h2 className='looo'>스캐너에 QR을 스캔해주세요</h2>
+        </div>
+        <input className='dddsdf'
+          type="text"        
+          value={studentName}
+          onChange={(e) => setStudentName(e.target.value)}
+          autoFocus
+          style={{width:'0.1px', height:'0.1px'} }
+        />
+        
+      </div>
+      <div className='qrbackBcontainer'>
+      <button className='qrbackB' onClick={goHome}>뒤로가기</button>
+      </div>
     </div>
   );
 }
