@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './css/AdminGuest.css'
 
 function AdminGuest() {
   const [getGuesterror, setgetGuesterror] = useState(null);
@@ -28,13 +29,13 @@ function AdminGuest() {
 
   return (
     <div>
-      <h1 className='chul'>방문기록</h1>
-      <div id="table-container" className='LRtc'>
-        <table className='LRtab'>
-          <thead className='LRthe'>
-            <tr className='LRtr'>
-              <th className='LRth'>이름</th>
-              <th className='LRth'>방문목적</th>              
+      <h1 className='Bang'>방문기록</h1>
+      <div id="table-container1" className='LRtc1'>
+        <table className='LRtab1'>
+          <thead className='LRthe1'>
+            <tr className='LRtr1'>
+              <th className='LRth1'>이름</th>
+              <th className='LRth1'>방문목적</th>              
             </tr>
           </thead>
           <tbody>
@@ -46,9 +47,9 @@ function AdminGuest() {
             ))}
           </tbody>
         </table>
-      <button className='joeB' onClick={getGuest}>조회하기</button>
-      <button className='backB' onClick={goBack}>뒤로가기</button>
       </div>
+      <button className='joeB1' onClick={getGuest}>조회하기</button>
+      <button className='backB1' onClick={goBack}>뒤로가기</button>
     </div>
   );
 }

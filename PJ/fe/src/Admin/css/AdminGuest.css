@@ -1,0 +1,64 @@
+.Bang {
+    font-size: 50px;
+    margin: 20px 0;
+    text-align: center; /* 텍스트를 가운데로 정렬합니다. */
+    margin-top: 150px;
+  }
+  
+  #table-container1 {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    overflow: auto;
+    max-height: 800px;
+    margin-bottom: 100px;
+  }
+  
+  .LRtab1 {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .LRth1, .LRtd1 {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .joeB1 {
+    background-color: #6ea287;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 10rem;
+    margin-top:5%;
+    width: 30%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  .backB1 {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 30%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  #table-container1::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  #table-container1::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  #table-container1::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }

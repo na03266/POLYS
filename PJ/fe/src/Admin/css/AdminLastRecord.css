@@ -16,6 +16,33 @@
     font-weight: bold;
     
   }
+
+  .joeBr {
+    background-color: #6ea287;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 12rem;
+    margin-top:5%;
+    width: 30%;
+    height: 80px;
+    font-size: 20px;
+  }
+  
+  .backBr {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 30%;
+    height: 80px;
+    font-size: 20px;
+  }
   
   .LRtr:nth-child(even) {
     

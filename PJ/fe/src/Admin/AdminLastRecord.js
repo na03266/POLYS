@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './css/AdminLastRecord.css';
 
 function AdminLastRecord() {
   const [getAttenderror, setgetAttenderror] = useState(null);
@@ -49,7 +50,7 @@ function AdminLastRecord() {
   return (
     <div>
       <h1 className='chul'>지난기록</h1>
-      <div id="table-container" className='LRtc'>
+      <div id="table-container1">
         <table className='LRtab'>
           <thead className='LRthe'>
             <tr className='LRtr'>
@@ -68,9 +69,9 @@ function AdminLastRecord() {
             ))}
           </tbody>
         </table>
-      <button className='joeB' onClick={getAttend}>조회하기</button>
-      <button className='backB' onClick={goBack}>뒤로가기</button>
       </div>
+      <button className='joeBr' onClick={getAttend}>조회하기</button>
+      <button className='backBr' onClick={goBack}>뒤로가기</button>
     </div>
   );
 }
