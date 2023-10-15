@@ -18,6 +18,7 @@ import GuestLogin from './Main/guestLogin';
 import GuestRegist from './Main/guestRegist';
 import GF from './Main/gF';
 import GuestWelcome from './Main/guestWelcome';
+import AdminGuest from './Admin/AdminGuest';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/guestRegist" element={<GuestRegist />} /> 
         <Route path="/gF" element={<GF />} /> 
         <Route path="/guestWelcome" element={<GuestWelcome />} /> 
+        <Route path="/AdminGuest" element={<AdminGuest />} /> 
       </Routes>
     </Router>
   );
