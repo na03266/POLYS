@@ -13,18 +13,24 @@ function AdminMenu() {
     const goUserInfo = () => {               
         window.location.href='/adminUserInfo';
       };    
+    const goAdminGuest = () =>{
+        window.location.href='/adminGuest';
+      };
 
   return (
     <div>
         <h1 className='hi'>{Name}님<br></br> 환영합니다!</h1>
-          
-        <button className='menubutton' onClick={goRecord}>출석현황</button>
-        <button className='menubutton' onClick={golastRecord}>지난기록</button>
-        <button className='menubutton' onClick={goUserInfo}>학생별정보</button>
-        <div>
-          <AdminLogout/>
+            <div className='menubutton-container'>
+            <button className='menubutton1' onClick={goRecord}>출석현황</button>
+            <button className='menubutton1' onClick={golastRecord}>지난기록</button>
+              <br></br>
+            <button className='menubutton2' onClick={goUserInfo}>학생별정보</button>
+            <button className='menubutton2' onClick={goAdminGuest}>방문기록</button>
+            </div>
+        <div className='logout-container'>
+        <AdminLogout/>
         </div>
-    </div>
+      </div>
   )
 }
 
