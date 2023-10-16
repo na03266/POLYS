@@ -58,7 +58,12 @@ function GuestWelcome() {
       // 컴포넌트 언마운트 시 timeout 정리
       return () => clearTimeout(timeout);
     }, []);
-
+    
+    useEffect(() => {
+      // hooo.mp3 오디오 파일 재생
+      const audio = new Audio('/bgm/Hooo.mp3');
+      audio.play();
+    }, []);
 
   return (
     <div>
