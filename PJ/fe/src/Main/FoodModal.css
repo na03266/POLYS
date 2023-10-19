@@ -61,3 +61,21 @@ th {
 .close-button:hover {
   color: #f00; /* 닫기 버튼에 호버 효과를 주기 위한 스타일 */
 }
+
+
+/* 모달 창에 대한 애니메이션 */
+.modal-animation {
+  animation: slideInModal 0.3s forwards;
+}
+
+@keyframes slideInModal {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

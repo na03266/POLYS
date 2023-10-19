@@ -36,7 +36,7 @@ function GuestLogin() {
 
   return (
     
-    <div>
+    <div className='confirm-container slide-in-right'>
       <div>
         <h2 className='QRjinhanggo' style={{ textAlign:'center' }}>QR로 비회원 등록을 진행해주세요.</h2>
       </div>
