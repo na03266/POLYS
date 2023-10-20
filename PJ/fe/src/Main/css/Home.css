@@ -63,7 +63,7 @@ body{
 
 /* 페이지 전환을 위한 애니메이션 */
 .slide-out-left {
-    animation: slideOutLeft 0.2s forwards;
+    animation: slideOutLeft 0.5s forwards;
   }
   
   @keyframes slideOutLeft {

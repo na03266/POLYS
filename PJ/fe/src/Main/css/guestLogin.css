@@ -1,22 +1,49 @@
 /* styles.css (예제 파일명) */
 
 .QRjinhanggo {
-    text-align: center; /* 텍스트 가운데 정렬 */
-    font-size: 55px; /* 텍스트 크기 조절 */
-    margin-top: 30rem;
+  text-align: center; /* 텍스트 가운데 정렬 */
+  font-size: 55px; /* 텍스트 크기 조절 */
+  margin-top: 30rem;
+}
+
+.qrimgcontainer {
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  height: 35rem;
+}
+
+.qrimg {
+  width: 500px;
+  height: 500px;
+  /* 다른 스타일 속성 추가 가능 */
+}
+
+/* 페이지 전환을 위한 애니메이션 */
+.slide-out-left {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
   }
-  
-  .qrimgcontainer {
-    display: flex;
-    justify-content: center; /* 수평 가운데 정렬 */
-    align-items: center; /* 수직 가운데 정렬 */
-    height:35rem;
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .qrimg {
-    width: 500px;
-    height: 500px;
-    /* 다른 스타일 속성 추가 가능 */
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  
+  to {
+    transform: translateX(0);
+  }
+}

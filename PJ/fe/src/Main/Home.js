@@ -10,14 +10,8 @@ import FoodModal from './foodmodal';
 import './css/Home.css';
 
 function Home() {
-  const goAdmin = () => {
-    const element = document.querySelector('.home-container');
-    if (element) {
-      element.classList.add('slide-out-left');
-    }
-    setTimeout(() => {
-    window.location.href = '/admin';
-    },200);
+  const goAdmin = () => {        
+    window.location.href = '/admin';    
   };
 
   const goConfirm = () => {
