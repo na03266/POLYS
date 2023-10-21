@@ -5,6 +5,12 @@ import './css/guestLogin.css'
 function GuestLogin() {
   const [guestID, setGuestID] = useState(null);
 
+
+  const goHome = () =>{
+    window.location.href = '/';
+  };
+
+
   useEffect(() => {
     let initialGuestID = null;
     const interval = setInterval(() => {
@@ -50,6 +56,11 @@ function GuestLogin() {
     <div className='qrimgcontainer'>
       <img className='qrimg' src='./qr.jpeg' alt="QR Code" style={{ width: '500px', height: '500px' }}/>
     </div>
+
+    <div className='qrbackBcontainer'>
+        <button className='qrbackB' style={{width:'800px'}} onClick={goHome}>뒤로가기</button>
+        </div>
+        
     </div>
   );
 }
