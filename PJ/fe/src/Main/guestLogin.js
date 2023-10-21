@@ -25,7 +25,7 @@ function GuestLogin() {
             }
             setTimeout(() => {
               setGuestID(newGuestID);
-              window.location.href = '/gF';
+              window.location.href = '/guestWelcome';
               localStorage.setItem('guestID', newGuestID);
               
             },200);
