@@ -5,6 +5,9 @@ import axios from 'axios';
 const FoodModal = ({ onClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [menuData, setMenuData] = useState(null);
+  const [selectedData, setSelectedData] = useState(null);
+  const [isDataModalOpen, setIsDataModalOpen] = useState(false);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +19,7 @@ const FoodModal = ({ onClose }) => {
         const filteredMenuData = data.filter((dayMenu) => {
           return !dayMenu.date.includes('토요일') && !dayMenu.date.includes('일요일');
         });
-
+      
         setMenuData(filteredMenuData);
         console.log(data);
       } catch (error) {
@@ -32,7 +35,14 @@ const FoodModal = ({ onClose }) => {
     onClose();
   };
 
-  
+  const handleClick = (data) => {
+    setSelectedData(data);
+    setIsDataModalOpen(true);
+  };
+
+  const closeDataModal = () => {
+    setIsDataModalOpen(false);
+  };
 
   return (
     <div className={`food-modal ${isModalOpen ? 'open' : 'closed'}`}>
@@ -49,23 +59,23 @@ const FoodModal = ({ onClose }) => {
             </thead>
             <tbody>
               {menuData.map((dayMenu, index) => (
-                <tr key={index}>
+                <tr key={index} onClick={() => handleClick(dayMenu)}>
                   <td>{dayMenu.date}</td>
                   <td>
                     <pre className="yoyo">
                       {dayMenu.menu
                         .split('\n')
                         .map((menuItem, itemIndex) => (
-                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{menuItem.trim().replace(/,/g, '')}</div>
+                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{itemIndex === 0 ? ` ${menuItem.trim().replace(/,/g, '')}` : menuItem.trim().replace(/,/g, '')}</div>
                         ))}
                     </pre>
                   </td>
                   <td>
-                    <pre>
+                    <pre className="dinner">
                       {dayMenu.mealType
                         .split('\n')
                         .map((menuItem, itemIndex) => (
-                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{menuItem.trim().replace(/,/g, '')}</div>
+                          <div key={itemIndex} style={{ marginTop: itemIndex === 0 ? '0' : '10px' }}>{itemIndex === 0 ? ` ${menuItem.trim().replace(/,/g, '')}` : menuItem.trim().replace(/,/g, '')}</div>
                         ))}
                     </pre>
                   </td>
@@ -75,6 +85,44 @@ const FoodModal = ({ onClose }) => {
           </table>
         )}
       </div>
+      {isDataModalOpen && selectedData && (
+        <div className="data-modal">
+          <div className="data-modal-content">
+            <span className="close" onClick={closeDataModal}>&times;</span>
+            <h2 style={{margin:'40px'}}>{selectedData.date}</h2>
+            <table style={{width: '100%'}}>
+      <thead>
+        <tr>
+          <th style={{width:'50%'}}>점심</th>
+          <th style={{width:'50%'}}>저녁</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> 
+            <pre className='extend-yoyo' style={{ fontSize: '25px'}}>
+    {selectedData.menu.split(',').map((item, index) => (
+      <div key={index} style={{ marginTop: '10px' }}>
+        {item.trim()}
+      </div>
+    ))}
+  </pre>
+  </td>
+          <td>
+            <pre className='extend-dinner' style={{ fontSize:'25px'}}>
+    {selectedData.mealType.split(',').map((item, index) => (
+      <div key={index} style={{ marginTop: '10px' }}>
+        {item.trim()}
+      </div>
+    ))}
+  </pre>
+  </td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -19,9 +19,16 @@ function GuestLogin() {
           }
 
           if (guestID !== newGuestID && initialGuestID !== newGuestID) {
-            setGuestID(newGuestID);
-            window.location.href = '/gF';
-            localStorage.setItem('guestID', newGuestID);
+            const element = document.querySelector('.guest-container');
+            if (element) {
+              element.classList.add('slide-out-left');
+            }
+            setTimeout(() => {
+              setGuestID(newGuestID);
+              window.location.href = '/gF';
+              localStorage.setItem('guestID', newGuestID);
+              
+            },200);
           }
         })
         .catch((error) => {
@@ -36,7 +43,7 @@ function GuestLogin() {
 
   return (
     
-    <div>
+    <div className='guest-container'>
       <div>
         <h2 className='QRjinhanggo' style={{ textAlign:'center' }}>QR로 비회원 등록을 진행해주세요.</h2>
       </div>
