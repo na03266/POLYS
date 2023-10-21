@@ -68,7 +68,9 @@ function Confirmok() {
       <h1 className='nimhi'>
         {studentName}님 ㅎㅇ요 <br />출석시간 {formatTime(currentTime)}
       </h1>
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {studentGender === "0" ? <Mainthree /> : <Mainthree2 />}
+      </div>
       {studentName && <div style={{ fontSize: '25px' }}>{studentName}</div>}
       <h3 className='okcountdown'>
         {countdown > 0 ? `${countdown}초 뒤에 홈 화면으로 이동합니다.` : '이동 중...'}

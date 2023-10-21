@@ -6,6 +6,12 @@ function AdminLogin() {
   const [loginError, setLoginError] = useState(null);
   const [Password, setPassword] = useState('');
 
+  const goHome = () =>{
+    window.location.href = '/';
+  };
+
+
+
   const handleLogin = async () => {
     try {
       const response = await axios.post('http://192.168.10.145:3003/api/adminLogin', {
@@ -49,6 +55,11 @@ function AdminLogin() {
       <button type="button" onClick={handleLogin}>
         로그인
       </button>
+
+      <div className='qrbackBcontainer'>
+        <button className='qrbackB' style={{width:'800px'}} onClick={goHome}>뒤로가기</button>
+        </div>
+
     </div>
   );
 }

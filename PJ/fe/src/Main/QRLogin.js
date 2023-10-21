@@ -108,7 +108,6 @@ function QRLogin() {
           autoFocus
           style={{width:'0.1px', height:'0.1px'} }
         />
-        
       </div>
       <div className='qrbackBcontainer'>
       <button className='qrbackB' onClick={goHome}>뒤로가기</button>
