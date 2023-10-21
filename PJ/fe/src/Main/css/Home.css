@@ -27,7 +27,7 @@
 
 }
 
-.gus:hover {
+.guest:hover {
     /* background-color: #007bff;  */
     /* 호버 시 배경색 변경 */
     /* border: 2px solid #007bff;  */
@@ -61,6 +61,50 @@ body{
     font-family: 'peci';
 }
 
+/* 페이지 전환을 위한 애니메이션 */
+.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+  }
+  
+  @keyframes slideOutLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  .slide-in-right {
+    animation: slideInRight 0.5s forwards;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+
+
  @font-face {
     font-family: 'dnf';
     src: url('../../fonts/DNFBitBitTTF.ttf');
@@ -75,4 +119,6 @@ body{
     font-family: 'peci';
     src: url('../../fonts/Recipekorea\ 레코체\ FONT.ttf');
  }
+ 
+
  
