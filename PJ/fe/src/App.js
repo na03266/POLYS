@@ -21,6 +21,7 @@ import GuestWelcome from './Main/guestWelcome';
 import AdminGuest from './Admin/AdminGuest';
 import HakJangNim from './Main/HakJangNim';
 import QRLogin from './Main/QRLogin';
+import QRGuide from './Main/QRGuide';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/AdminGuest" element={<AdminGuest />} /> 
         <Route path='/HakJangNim' element={<HakJangNim/>}/>
         <Route path='/QRLogin' element={<QRLogin/>}/>
+        <Route path='/QRGuide' element={<QRGuide/>}/>
       </Routes>
     </Router>
   );
