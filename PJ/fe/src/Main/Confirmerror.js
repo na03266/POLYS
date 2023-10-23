@@ -6,7 +6,8 @@ function Confirmerror() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const goRegist = () => {
-    window.location.href = "/regist";
+    window.alert('회원가입 추후 추가예정');
+    window.location.href = '/';
   };
 
   const playErrorSound = () => {
