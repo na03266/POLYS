@@ -22,12 +22,13 @@ import AdminGuest from './Admin/AdminGuest';
 import HakJangNim from './Main/HakJangNim';
 import QRLogin from './Main/QRLogin';
 import QRGuide from './Main/QRGuide';
+import Waiting from './Main/Waiting';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adminMenu" element={<AdminMenu />} />
         <Route path="/adminRecord" element={<AdminRecord />} />
@@ -49,6 +50,7 @@ function App() {
         <Route path='/HakJangNim' element={<HakJangNim/>}/>
         <Route path='/QRLogin' element={<QRLogin/>}/>
         <Route path='/QRGuide' element={<QRGuide/>}/>
+        <Route path='/' element={<Waiting/>}/>
       </Routes>
     </Router>
   );
