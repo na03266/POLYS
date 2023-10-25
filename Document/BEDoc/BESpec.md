@@ -1,6 +1,6 @@
 
 
-# 프로젝트 기능 설계서
+# 백엔드 설계서
 
 ## 1. 회원 관리 기능 설계
 <img src="../BEDoc/img/flow.png" height="200">  
